@@ -66,7 +66,8 @@ class AuthController extends Controller
     {
 
         $user= User::create([
-            'role'=>"1",
+            'role'=> "1",
+            'name'=>$data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
@@ -74,7 +75,7 @@ class AuthController extends Controller
         Admin::create([
 
             'user_id'=>$user->id,
-            'name'=>$user->name,
+            'name'=>$data['name'],
             'organization'=>"University of moratuwa",
 
         ]);
