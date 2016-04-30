@@ -75,11 +75,20 @@ class AuthController extends Controller
         Admin::create([
 
             'user_id'=>$user->id,
+            'organization'=>$data['organization'],
             'name'=>$data['name'],
             'organization'=>"University of moratuwa",
 
         ]);
 
         return $user;
+    }
+
+    public function redirectPath(){
+
+        if(\Auth::user()->role=='1'){
+            return "/home";
+        }
+        return '/foo';
     }
 }

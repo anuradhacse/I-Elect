@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/foo', function () {
+    return "voters home";
+});
+
 
 Route::auth();
 
