@@ -14,9 +14,9 @@ class CreateElectionCandidateTable extends Migration
     {
         Schema::create('election_candidate', function (Blueprint $table) {
             $table->integer('election_id')->unsigned()->index();
-            $table->foreign('election_id')->references('id')->on('election')->onDelete('cascade');
+            $table->foreign('election_id')->references('id')->on('elections')->onDelete('cascade');
             $table->integer('candidate_id')->unsigned()->index();
-            $table->foreign('candidate_id')->references('id')->on('candidate')->onDelete('cascade');
+            $table->foreign('candidate_id')->references('id')->on('candidates')->onDelete('cascade');
         });
     }
 

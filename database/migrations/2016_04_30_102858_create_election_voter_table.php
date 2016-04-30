@@ -14,9 +14,9 @@ class CreateElectionVoterTable extends Migration
     {
         Schema::create('election_voter', function (Blueprint $table) {
             $table->integer('election_id')->unsigned()->index();
-            $table->foreign('election_id')->references('id')->on('election')->onDelete('cascade');
+            $table->foreign('election_id')->references('id')->on('elections')->onDelete('cascade');
             $table->integer('voter_id')->unsigned()->index();
-            $table->foreign('voter_id')->references('id')->on('voter')->onDelete('cascade');
+            $table->foreign('voter_id')->references('id')->on('voters')->onDelete('cascade');
         });
     }
 

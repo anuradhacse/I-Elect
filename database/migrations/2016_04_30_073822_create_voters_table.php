@@ -12,7 +12,7 @@ class CreateVotersTable extends Migration
      */
     public function up()
     {
-        Schema::create('voter', function (Blueprint $table) {
+        Schema::create('voters', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
@@ -32,6 +32,6 @@ class CreateVotersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('voter');
+        Schema::drop('voters');
     }
 }

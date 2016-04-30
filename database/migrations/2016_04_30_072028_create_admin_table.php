@@ -12,7 +12,7 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
 
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -35,6 +35,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admin');
+        Schema::drop('admins');
     }
 }

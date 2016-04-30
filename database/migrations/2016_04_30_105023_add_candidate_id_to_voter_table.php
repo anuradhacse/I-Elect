@@ -12,11 +12,11 @@ class AddCandidateIdToVoterTable extends Migration
      */
     public function up()
     {
-        Schema::table('voter', function (Blueprint $table) {
+        Schema::table('voters', function (Blueprint $table) {
             $table->integer('candidate_id')->unsigned()->nullable();
             $table->foreign('candidate_id')
                 ->references('id')
-                ->on('candidate')
+                ->on('candidates')
                 ->onDelete('cascade');
         });
     }
@@ -28,7 +28,7 @@ class AddCandidateIdToVoterTable extends Migration
      */
     public function down()
     {
-        Schema::table('voter', function (Blueprint $table) {
+        Schema::table('voters', function (Blueprint $table) {
             //
         });
     }

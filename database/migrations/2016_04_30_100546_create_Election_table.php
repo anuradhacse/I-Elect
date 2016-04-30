@@ -12,7 +12,7 @@ class CreateElectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('election', function (Blueprint $table) {
+        Schema::create('elections', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('admin_id')->unsigned();
             $table->string('name');
@@ -25,7 +25,7 @@ class CreateElectionTable extends Migration
 
             $table->foreign('admin_id')
                 ->references('id')
-                ->on('admin')
+                ->on('admins')
                 ->onDelete('cascade');
         });
     }
@@ -37,6 +37,6 @@ class CreateElectionTable extends Migration
      */
     public function down()
     {
-        Schema::drop('election');
+        Schema::drop('elections');
     }
 }
