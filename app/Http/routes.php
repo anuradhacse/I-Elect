@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/foo',function(){
-   return "working";
-});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
