@@ -13,7 +13,7 @@ class AddTimestampsToAdminsTable extends Migration
     public function up()
     {
         Schema::table('admins', function (Blueprint $table) {
-            //
+            $table->timestamps();
         });
     }
 
