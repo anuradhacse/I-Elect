@@ -20,6 +20,8 @@ class ElectionController extends Controller
         $user_id=\Auth::user()->id;
 
         $admin=Admin::where('user_id',$user_id)->get();
+
+
         foreach($admin as $item){
             $admin_id=$item->id;
         }
