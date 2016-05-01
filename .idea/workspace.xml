@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7263e2dd-c61d-4d8a-9db8-26870872a194" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Election.php" afterPath="$PROJECT_DIR$/app/Election.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" />
-    </list>
+    <list default="true" id="7263e2dd-c61d-4d8a-9db8-26870872a194" name="Default" comment="" />
     <ignored path="ielect.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -68,8 +65,8 @@
       <file leaf-file-name="ElectionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ElectionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -95,21 +92,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_30_100546_create_Election_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2016_04_30_100546_create_Election_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_100546_create_Election_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7621247">
+            <state vertical-scroll-proportion="-9.576923">
               <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/elections/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.042288557">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,6 +159,7 @@
         <option value="$PROJECT_DIR$/vendor/illuminate/html/HtmlServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" />
         <option value="$PROJECT_DIR$/app/Election.php" />
+        <option value="$PROJECT_DIR$/resources/views/elections/show.blade.php" />
       </list>
     </option>
   </component>
@@ -303,28 +301,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="voter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ielect" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ielect" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -348,6 +324,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elections" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -491,7 +489,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Ht&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;HtmlServiceProvider.php&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;bindshared&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/HomeController.php&#10;postlo&#9;null&#9;null&#10;Auth&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;A&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;redirectPat&#9;null&#9;null&#10;handleUserWasAuthenticate&#9;null&#9;null&#10;ap&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/layouts/app.blade.php&#10;a&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/home.blade.php&#10;RedirectP&#9;null&#9;null&#10;RegistersUsers&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Aut&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;r&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;RedirectsU&#9;null&#9;null&#10;re&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Register&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/ElectionController.php&#10;Ht&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;HtmlServiceProvider.php&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;bindshared&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/HomeController.php&#10;postlo&#9;null&#9;null&#10;Auth&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;A&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;redirectPat&#9;null&#9;null&#10;handleUserWasAuthenticate&#9;null&#9;null&#10;ap&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/layouts/app.blade.php&#10;a&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/home.blade.php&#10;RedirectP&#9;null&#9;null&#10;RegistersUsers&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Aut&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;r&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;RedirectsU&#9;null&#9;null&#10;re&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Register&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
@@ -557,7 +555,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2170418" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26688102" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -586,14 +584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/adminhome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/voter/voterhome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -951,14 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ElectionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Election.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -967,10 +949,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ElectionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_100546_create_Election_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7621247">
+        <state vertical-scroll-proportion="-9.576923">
           <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/elections/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.042288557">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
