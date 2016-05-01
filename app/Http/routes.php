@@ -23,3 +23,7 @@ Route::auth();
 Route::get('/adminhome', 'HomeController@adminHome');
 Route::get('/voterhome', 'HomeController@voterHome');
 
+//creating routes for elections-->show,edit,update and delete
+
+Route::get('elections','ElectionController@index');
+
