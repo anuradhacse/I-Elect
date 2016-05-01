@@ -87,8 +87,8 @@ class AuthController extends Controller
     public function redirectPath(){
 
         if(\Auth::user()->role=='1'){
-            return "/home";
+            return "/adminhome";
         }
-        return '/foo';
+        return '/voterhome';
     }
 }

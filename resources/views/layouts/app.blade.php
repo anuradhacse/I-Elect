@@ -23,6 +23,7 @@
         .fa-btn {
             margin-right: 6px;
         }
+
     </style>
 </head>
 <body id="app-layout">
@@ -47,7 +48,15 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Admin Home</a></li>
+                    @if(Auth::check())
+                        @if(Auth::user()->role=="1")
+                            <li><a href="{{ url('/adminhome') }}">Admin Home</a></li>
+                        @endif
+                        @if(Auth::user()->role=="2")
+                            <li><a href="{{ url('/voterhome') }}">Voter Home</a></li>
+                        @endif
+                    @endif
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -76,6 +85,8 @@
     </nav>
 
     @yield('content')
+
+
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

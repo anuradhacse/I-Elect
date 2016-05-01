@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/foo', function () {
-    return "voters home";
-});
+
 
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/adminhome', 'HomeController@adminHome');
+Route::get('/voterhome', 'HomeController@voterHome');
+

@@ -5,10 +5,11 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
+                <div class="panel-heading">Welcome to I-Elect online Election Managing System.</div>
 
-                <div class="panel-body">
-                    Welcome to I-Elect online Election Managing System.
+
+                <div style="height: 500px" >
+                    <img  src="img/vote.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
                 </div>
             </div>
         </div>
