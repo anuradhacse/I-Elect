@@ -8,5 +8,7 @@ use App\Http\Requests;
 
 class ElectionController extends Controller
 {
-    //
+    public function index(){
+        return "all elections";
+    }
 }
