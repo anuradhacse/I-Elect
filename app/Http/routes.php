@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 
-
+Route::get('/foo',function(){
+    return view('elections.datatable');
+});
 
 Route::auth();
 
