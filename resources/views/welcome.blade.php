@@ -9,7 +9,7 @@
 
 
                 <div style="height: 500px" >
-                    <img  src="img/vote.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
+                    <img  src="images/vote.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
                 </div>
             </div>
         </div>
