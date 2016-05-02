@@ -20,7 +20,7 @@ Route::get('/foo',function(){
     return view('elections.datatable');
 });
 Route::get('/boo',function(){
-    return view('commercial');
+    return view('com.commercial');
 });
 
 Route::auth();

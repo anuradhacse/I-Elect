@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Jason Smith</title>
+    <title>I-Elect Commertial Site</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{asset('css/grid.css')}}"type="text/css" media="screen">
-    <!--[if lt IE 9]><script type="text/javascript" src={!! HTML::script('js/html5.css') !!}></script><![endif]-->
+    <!--[if lt IE 9]><script type="text/javascript" src="{{asset('js/html5.js')}}"></script><![endif]-->
 </head>
 <body id="page1">
 <div class="extra">
@@ -15,15 +15,15 @@
         <div class="main">
             <div class="border-top">
                 <div class="wrapper">
-                    <h1><a href="index.html">Commercial Site</a></h1>
+                    <h1><a href="index.html">I-Elect Commercial Site</a></h1>
                     <nav>
                         <ul class="menu">
-                            <li><a class="active" href="index.html">About</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="areas.html">Areas of Practice</a></li>
-                            <li><a href="clients.html">Clients</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li class="last-item"><a href="contacts.html">Contacts</a></li>
+                            <li><a class="active" href="html/index.html">About</a></li>
+                            <li><a href="html/services.html">Services</a></li>
+                            <li><a href="html/areas.html">Areas of Practice</a></li>
+                            <li><a href="html/clients.html">Clients</a></li>
+                            <li><a href="html/faq.html">FAQ</a></li>
+                            <li class="last-item"><a href="html/contacts.html">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
