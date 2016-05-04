@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Jason Smith | Contacts</title>
+    <title>i-Elect | Contacts</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{asset('css/grid.css')}}"type="text/css" media="screen">
+
     <!--[if lt IE 9]><script type="text/javascript" src="{{asset('js/html5.js')}}"></script><![endif]-->
 </head>
 <body id="page6">
@@ -15,22 +16,22 @@
         <div class="main">
             <div class="border-top">
                 <div class="wrapper">
-                    <h1><a href="index.html">Jason Smith</a></h1>
+                    <h1><a href="#">i-Elect</a></h1>
                     <nav>
                         <ul class="menu">
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="areas.html">Areas of Practice</a></li>
-                            <li><a href="clients.html">Clients</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li class="last-item"><a class="active"  href="contacts.html">Contacts</a></li>
+                            <li><a href="{{url('/comhome')}}">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Areas of Practice</a></li>
+                            <li><a href="#">Clients</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li class="last-item"><a class="active"  href="{{url('/contactspage')}}">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="slider-bg">
                 <div class="slider">
-                    <div class="banner"> <strong class="title-1">REALIZE</strong> <span class="text-1">your constitutional right for qualified</span> <a class="link" href="#">legal help</a> </div>
+                    <div class="banner"> <strong class="title-1">REALIZE</strong> <span class="text-1">Voting is your constitutional right</span> <a class="link" href="#">legal help</a> </div>
                 </div>
             </div>
         </div>
@@ -68,13 +69,13 @@
                             <h4 class="img-indent-bot">Contact Us</h4>
                             <div class="wrapper indent-bot">
                                 <figure class="img-border">
-                                    <iframe width="230" height="167" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.77767546408!2d79.89958941436633!3d6.796882321811445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae245416b7f34b5%3A0x7bd32721ab02560e!2sUniversity+of+Moratuwa!5e0!3m2!1sen!2slk!4v1462379609249" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 </figure>
                             </div>
                             <dl>
-                                <dt class="prev-indent-bot2">USA 8901 Marmora Road, Glasgow</dt>
-                                <dd><span>Freephone:</span> +1 800 559 6580</dd>
-                                <dd><span>Telephone:</span> +1 800 603 6035</dd>
+                                <dt class="prev-indent-bot2">katubedda road, Moratuwa</dt>
+                                <dd><span>Freephone:</span> +94 71 60 66 184</dd>
+                                <dd><span>Telephone:</span> +94 22 98922</dd>
                                 <dd><span>Fax:</span> +1 800 889 9898</dd>
                                 <dd><span>Email:</span><a href="#">mail@demolink.org</a></dd>
                             </dl>

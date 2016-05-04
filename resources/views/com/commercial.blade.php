@@ -18,19 +18,19 @@
                     <h1><a href="index.html">I-Elect Commercial Site</a></h1>
                     <nav>
                         <ul class="menu">
-                            <li><a class="active" href="html/index.html">About</a></li>
-                            <li><a href="html/services.html">Services</a></li>
-                            <li><a href="html/areas.html">Areas of Practice</a></li>
-                            <li><a href="html/clients.html">Clients</a></li>
-                            <li><a href="html/faq.html">FAQ</a></li>
-                            <li class="last-item"><a href="html/contacts.html">Contacts</a></li>
+                            <li><a class="active" href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Areas of Practice</a></li>
+                            <li><a href="#">Clients</a></li>
+                            <li><a href="{{ url('/') }}">Try App now</a></li>
+                            <li class="last-item"><a href="{{url('/contactspage')}}  ">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="slider-bg">
                 <div class="slider">
-                    <div class="banner"> <strong class="title-1">REALIZE</strong> <span class="text-1">your constitutional right for qualified</span> <a class="link" href="#">legal help</a> </div>
+                    <div class="banner"> <strong class="title-1">REALIZE</strong> <span class="text-1">Voting is your constitutional right</span> <a class="link" href="#">legal help</a> </div>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                     <article class="grid_8">
                         <div class="indent-left">
                             <h3>Welcome!</h3>
-                            <h4 class="color-3">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</h4>
+                            <h4 class="color-3">You are visiting i-Elect official website.Get the real experience of internet voting</h4>
                             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fugat harum quidem rerum facilis est et expedita. </div>
                     </article>
                     <article class="grid_4">
@@ -62,7 +62,7 @@
                 <aside>
                     <div class="wrapper">
                         <article class="grid_4">
-                            <div class="indent"> <span class="title-2">Capital <strong>Market</strong></span>
+                            <div class="indent"> <span class="title-2">Governement <strong>Organizations</strong></span>
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img1.jpg" alt=""></figure>
                                 </div>
@@ -70,7 +70,7 @@
                                 <a class="link-1" href="#">Read More</a> </div>
                         </article>
                         <article class="grid_4">
-                            <div class="indent"> <span class="title-2">Banking &amp; <strong>Finance</strong></span>
+                            <div class="indent"> <span class="title-2">Private &amp; <strong>Sector</strong></span>
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img2.jpg" alt=""></figure>
                                 </div>
@@ -78,7 +78,7 @@
                                 <a class="link-1" href="#">Read More</a> </div>
                         </article>
                         <article class="grid_4">
-                            <div class="indent"> <span class="title-2">Employment <strong>Law</strong></span>
+                            <div class="indent"> <span class="title-2">Employment <strong>Managerial</strong></span>
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img3.jpg" alt=""></figure>
                                 </div>

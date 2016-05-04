@@ -19,8 +19,12 @@ Route::get('/', function () {
 Route::get('/foo',function(){
     return view('elections.datatable');
 });
-Route::get('/boo',function(){
+Route::get('/comhome',function(){
     return view('com.commercial');
+});
+
+Route::get('/contactspage',function(){
+    return view('com.contacts');
 });
 
 Route::auth();
