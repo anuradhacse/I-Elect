@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>I-Elect Commertial Site</title>
+    <title>i-Elect Commertial Site</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css" media="screen">
@@ -15,7 +15,7 @@
         <div class="main">
             <div class="border-top">
                 <div class="wrapper">
-                    <h1><a href="index.html">I-Elect Commercial Site</a></h1>
+                    <h1><a href="index.html">i-Elect Commercial Site</a></h1>
                     <nav>
                         <ul class="menu">
                             <li><a class="active" href="#">About</a></li>
@@ -44,17 +44,17 @@
                         <div class="indent-left">
                             <h3>Welcome!</h3>
                             <h4 class="color-3">You are visiting i-Elect official website.Get the real experience of internet voting</h4>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fugat harum quidem rerum facilis est et expedita. </div>
+                           i-Elect version 1.0.1 facililates our users with awesome features.this is the official website for i-Elect web app.contact us for latest release details of the product.intergrate constitutional rights with technology</div>
                     </article>
                     <article class="grid_4">
                         <div class="indent-left indent-top">
-                            <h4 class="prev-indent-bot2">Success Stories</h4>
+                            <h4 class="prev-indent-bot2">Features</h4>
                             <ul class="list-1">
-                                <li><a href="#">At vero eos et accusamus et iusto</a></li>
-                                <li><a href="#">Odio dignissimos ducimus</a></li>
-                                <li><a href="#">Blanditiis praesentium voluptatum</a></li>
-                                <li><a href="#">Deleniti atque corrupti quos</a></li>
-                                <li><a href="#">Rolores et quas molestias excepturi</a></li>
+                                <li><a href="#">Administrator manager</a></li>
+                                <li><a href="#">Multiple elections</a></li>
+                                <li><a href="#">Email notifications</a></li>
+                                <li><a href="#">Profile Customization</a></li>
+                                <li><a href="#">Instant results</a></li>
                             </ul>
                         </div>
                     </article>
@@ -66,7 +66,7 @@
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img1.jpg" alt=""></figure>
                                 </div>
-                                <p class="p2">Jason Smith is one of free website templates created by TemplateMonster.com team. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
+                                <p class="p2">Government organizations like universities,schools can use i-Elect to efficiently hold elections inside institute. Free version can be downloaded from our official website</p>
                                 <a class="link-1" href="#">Read More</a> </div>
                         </article>
                         <article class="grid_4">
@@ -74,7 +74,7 @@
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img2.jpg" alt=""></figure>
                                 </div>
-                                <p class="p2">This Jason Smith Template goes with two packages – with PSD source files and without them. PSD source files are available for free for the registered members of TemplateMonster.com. </p>
+                                <p class="p2">Specialized premium version for private sector institutes.schedule multiple elections at the same time and make use of technology for productivity of company </p>
                                 <a class="link-1" href="#">Read More</a> </div>
                         </article>
                         <article class="grid_4">
@@ -82,7 +82,7 @@
                                 <div class="prev-indent-bot2 wrapper">
                                     <figure class="img-border"><img src="images/page1-img3.jpg" alt=""></figure>
                                 </div>
-                                <p class="p2">This website template has several pages: <a class="link color-1" href="index.html">About Us</a>, <a class="link color-1" href="services.html">Services</a>, <a class="link color-1" href="areas.html">Areas of Practice</a>, <a class="link color-1" href="clients.html">Clients</a>, <a class="link color-1" href="faq.html">Frequently Asked Questions</a>, <a class="link color-1" href="contacts.html">Contact Us</a> (note that contact us form – doesn't work).</p>
+                                <p class="p2">This official website has several pages: <a class="link color-1" href="index.html">About Us</a>, <a class="link color-1" href="services.html">Services</a>, <a class="link color-1" href="areas.html">Areas of Practice</a>, <a class="link color-1" href="clients.html">Clients</a>, <a class="link color-1" href="faq.html">Frequently Asked Questions</a>, <a class="link color-1" href="contacts.html">Contact Us</a> (note that contact us form – doesn't work).</p>
                                 <a class="link-1" href="#">Read More</a> </div>
                         </article>
                     </div>

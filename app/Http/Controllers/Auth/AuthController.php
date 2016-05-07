@@ -77,7 +77,7 @@ class AuthController extends Controller
             'user_id'=>$user->id,
             'organization'=>$data['organization'],
             'name'=>$data['name'],
-            'organization'=>"University of moratuwa",
+
 
         ]);
 
