@@ -36,4 +36,5 @@ Route::get('/voterhome', 'HomeController@voterHome');
 
 Route::get('elections','ElectionController@index');
 Route::get('elections/create','ElectionController@create');
+Route::post('elections','ElectionController@store');
 
