@@ -15,6 +15,7 @@ class ElectionController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index(){
 
         $user_id=\Auth::user()->id;
@@ -26,10 +27,14 @@ class ElectionController extends Controller
             $admin_id=$item->id;
         }
 
-
+//can get null pointer exception if $admin is null
 
         $elections=Election::where('admin_id',$admin_id)->get();
 
         return view('elections.show',compact('elections'));
+    }
+
+    public function create(){
+        return view('elections.create');
     }
 }

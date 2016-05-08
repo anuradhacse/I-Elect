@@ -35,4 +35,5 @@ Route::get('/voterhome', 'HomeController@voterHome');
 //creating routes for elections-->show,edit,update and delete
 
 Route::get('elections','ElectionController@index');
+Route::get('elections/create','ElectionController@create');
 
