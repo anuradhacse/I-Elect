@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Voter extends Model
 {
-    protected $fillable=['name'];
+    /**
+     * put user id inside fillable other wise intergrity constraint violation error
+     * @var array
+     */
+    protected $fillable=['name','user_id'];
 }

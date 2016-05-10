@@ -13,7 +13,7 @@ class AddTimestampsToVoters extends Migration
     public function up()
     {
         Schema::table('voters', function (Blueprint $table) {
-            //
+            $table->timestamps();
         });
     }
 
