@@ -44,7 +44,7 @@
                         <div class="form-group">
 
                             {!! Form::label('des','Image:') !!}
-                            {!! Form::file('image') !!}
+                            {!! Form::file('image_path') !!}
 
                         </div>
 

@@ -24,7 +24,10 @@ class createCandidateRequest extends Request
     public function rules()
     {
         return [
-            
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'description'=>'required'
+
         ];
     }
 }
