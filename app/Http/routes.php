@@ -43,3 +43,8 @@ Route::post('elections','ElectionController@store');
 Route::get('voters/create','VoterController@create');
 Route::post('voters','VoterController@store');
 
+//candidate routes
+
+Route::get('candidates/create','CandidateController@create');
+Route::post('candidates','CandidateController@store');
+
