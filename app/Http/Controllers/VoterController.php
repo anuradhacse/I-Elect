@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Voter;
 use Request;
 use App\User;
 
@@ -38,7 +39,16 @@ class VoterController extends Controller
                 'password' => bcrypt($input['password']),
             ]);
 
-            return $user;
+        $voter= Voter::create([
+            'candidate_id'=> "1",
+            'name'=>$user['name'],
+            'user_id' => $user['id'],
+
+        ]);
+
+
+
+            return $voter;
 
 
 

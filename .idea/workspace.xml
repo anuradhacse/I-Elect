@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7263e2dd-c61d-4d8a-9db8-26870872a194" name="Default" comment="" />
+    <list default="true" id="7263e2dd-c61d-4d8a-9db8-26870872a194" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VoterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VoterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Voter.php" afterPath="$PROJECT_DIR$/app/Voter.php" />
+    </list>
     <ignored path="ielect.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,8 +29,8 @@
       <file leaf-file-name="ElectionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ElectionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.807693">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="-28.153847">
+              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
               <folding>
                 <element signature="e#40#54#0#PHP" expanded="true" />
               </folding>
@@ -47,17 +51,57 @@
       <file leaf-file-name="VoterController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88461536">
-              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <element signature="e#40#52#0#PHP" expanded="true" />
+                <element signature="e#40#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="errorlist.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/errors/errorlist.blade.php">
+      <file leaf-file-name="Voter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Voter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_04_30_122746_add_timestamps_to_admins_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_122746_add_timestamps_to_admins_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.79006773">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_04_30_073822_create_voters_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_073822_create_voters_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8846154">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_04_30_105023_add_candidate_id_to_voter_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_105023_add_candidate_id_to_voter_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.9615383">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Candidate.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Candidate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -66,63 +110,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/voter/create.blade.php">
+      <file leaf-file-name="CandidateController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CandidateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
-              <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_04_30_100546_create_Election_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_100546_create_Election_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createElectionRequest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createElectionRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/createElectionRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88650304">
+            <state vertical-scroll-proportion="-11.115385">
               <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistersUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-              <folding>
-                <element signature="e#46#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createVoterRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/createVoterRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8076925">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.807693">
-              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -136,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_30_072028_create_admin_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_30_073822_create_voters_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_30_074405_create_candidate_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_30_102858_create_election_voter_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_30_103432_create_election_candidate_table.php" />
@@ -181,12 +181,14 @@
         <option value="$PROJECT_DIR$/resources/views/admin/adminhome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/createVoterRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/VoterController.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/errorlist.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/voter/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/createElectionRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/elections/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CandidateController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/VoterController.php" />
+        <option value="$PROJECT_DIR$/app/Voter.php" />
       </list>
     </option>
   </component>
@@ -319,6 +321,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ielect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -372,7 +406,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../electionapp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Ele&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createElectionRequest.php&#10;cre&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/elections/create.blade.php&#10;cr&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createVoterRequest.php&#10;createE&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createElectionRequest.php&#10;createV&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createVoterRequest.php&#10;VO&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/VoterController.php&#10;Auth&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;posr&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;E&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/ElectionController.php&#10;vo&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/VoterController.php&#10;create&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2014_10_12_000000_create_users_table.php&#10;r&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;A&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/admin/adminhome.blade.php&#10;adm&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/admin/adminhome.blade.php&#10;a&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/elections/create.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/ielect/config/app.php&#10;ele&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2016_04_30_100546_create_Election_table.php&#10;ro&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;app.p&#9;FILE&#9;file://C:/wamp/www/ielect/config/app.php&#10;crea&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/elections/create.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;Elec&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/ElectionController.php&#10;Ht&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;HtmlServiceProvider.php&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;bindshared&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/HomeController.php&#10;postlo&#9;null&#9;null&#10;redirectPat&#9;null&#9;null&#10;handleUserWasAuthenticate&#9;null&#9;null&#10;ap&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/layouts/app.blade.php&#10;RedirectP&#9;null&#9;null&#10;RegistersUsers&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Aut&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;RedirectsU&#9;null&#9;null&#10;re&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Register&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="add&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2016_04_30_122746_add_timestamps_to_admins_table.php&#10;crea&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2016_04_30_073822_create_voters_table.php&#10;createv&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2016_04_30_073822_create_voters_table.php&#10;Vo&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/VoterController.php&#10;Candida&#9;null&#9;null&#10;Ca&#9;FILE&#9;file://C:/wamp/www/ielect/app/Candidate.php&#10;Ele&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createElectionRequest.php&#10;cre&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/elections/create.blade.php&#10;cr&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createVoterRequest.php&#10;createE&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createElectionRequest.php&#10;createV&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Requests/createVoterRequest.php&#10;VO&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/VoterController.php&#10;Auth&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;posr&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;E&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/ElectionController.php&#10;vo&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/VoterController.php&#10;create&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2014_10_12_000000_create_users_table.php&#10;r&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;A&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/admin/adminhome.blade.php&#10;adm&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/admin/adminhome.blade.php&#10;a&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/elections/create.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/ielect/config/app.php&#10;ele&#9;FILE&#9;file://C:/wamp/www/ielect/database/migrations/2016_04_30_100546_create_Election_table.php&#10;ro&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;app.p&#9;FILE&#9;file://C:/wamp/www/ielect/config/app.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/routes.php&#10;Elec&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/ElectionController.php&#10;Ht&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;HtmlServiceProvider.php&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/illuminate/html/HtmlServiceProvider.php&#10;bindshared&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/HomeController.php&#10;postlo&#9;null&#9;null&#10;redirectPat&#9;null&#9;null&#10;handleUserWasAuthenticate&#9;null&#9;null&#10;ap&#9;FILE&#9;file://C:/wamp/www/ielect/resources/views/layouts/app.blade.php&#10;RedirectP&#9;null&#9;null&#10;RegistersUsers&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Aut&#9;FILE&#9;file://C:/wamp/www/ielect/app/Http/Controllers/Auth/AuthController.php&#10;RedirectsU&#9;null&#9;null&#10;re&#9;FILE&#9;file://C:/wamp/www/ielect/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php&#10;Register&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
@@ -433,7 +467,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -441,7 +475,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38808373" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -477,20 +511,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.6923075">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/broadcasting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.653846">
@@ -516,20 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8461537">
           <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_105023_add_candidate_id_to_voter_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.730769">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_122746_add_timestamps_to_admins_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -683,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Candidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Election.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -737,14 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.961538">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_073822_create_voters_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -815,16 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88461536">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <element signature="e#40#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/createVoterRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.8076925">
@@ -849,20 +829,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/createElectionRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Candidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CandidateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_073822_create_voters_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8846154">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_105023_add_candidate_id_to_voter_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.9615383">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ElectionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.807693">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="-28.153847">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
           <folding>
             <element signature="e#40#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/createElectionRequest.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88650304">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Voter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_30_122746_add_timestamps_to_admins_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79006773">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding />
         </state>
       </provider>

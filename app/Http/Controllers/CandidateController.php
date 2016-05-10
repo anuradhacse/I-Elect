@@ -8,5 +8,5 @@ use App\Http\Requests;
 
 class CandidateController extends Controller
 {
-    //
+
 }
