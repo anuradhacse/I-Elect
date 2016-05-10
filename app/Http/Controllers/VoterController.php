@@ -8,5 +8,15 @@ use App\Http\Requests;
 
 class VoterController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index(){
+
+    }
+    public function create(){
+        return view('voters.create');
+    }
 }
