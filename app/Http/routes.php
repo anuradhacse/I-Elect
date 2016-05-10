@@ -38,3 +38,8 @@ Route::get('elections','ElectionController@index');
 Route::get('elections/create','ElectionController@create');
 Route::post('elections','ElectionController@store');
 
+//voter routes
+
+Route::get('voters/create','VoterController@create');
+Route::post('voters','VoterController@store');
+
