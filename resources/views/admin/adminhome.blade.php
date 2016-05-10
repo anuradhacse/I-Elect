@@ -5,8 +5,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard | create Election | Add Voters | Add Candidates | Finalize</div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
+                      <ul> Create Election</ul>
+
+
+
+                    </div>
 
                     <div class="panel-body">
                         <table id="example" class="display" cellspacing="0" width="100%">

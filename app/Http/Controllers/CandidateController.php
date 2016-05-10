@@ -11,6 +11,11 @@ use App\Http\Requests;
 class CandidateController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create(){
 
         return view('candidates.create');

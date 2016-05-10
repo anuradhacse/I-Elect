@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/foo',function(){
-    return view('elections.datatable');
+    return view('test');
 });
 Route::get('/comhome',function(){
     return view('com.commercial');
