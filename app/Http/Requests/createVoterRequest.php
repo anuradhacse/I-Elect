@@ -13,7 +13,7 @@ class createVoterRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class createVoterRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6',
         ];
     }
 }

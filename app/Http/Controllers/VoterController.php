@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\User;
 
+
 use App\Http\Requests;
 
 class VoterController extends Controller
@@ -25,13 +26,11 @@ class VoterController extends Controller
      * creating voter first makes an user an then create voter with that user id.
      * @return string|static
      */
-    public function store(){
+    public function store(Requests\createVoterRequest $request){
 
-        $input=Request::all();
-        $validator=validator($input);
+        $input=$request->all();
 
-        if($validator){
-        dd('validation passed');
+
             $user= User::create([
                 'role'=> "2",
                 'name'=>$input['name'],
@@ -40,17 +39,10 @@ class VoterController extends Controller
             ]);
 
             return $user;
-        }
 
-        return 'error';
+
+
 
     }
-    public function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
-        ]);
-    }
+
 }
