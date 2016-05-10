@@ -52,9 +52,11 @@
                 </div>
             </div>
         </div>
+        @include('errors.errorlist')
     </div>
 
 
     {!! Form::close() !!}
+
 
 @stop
