@@ -13,7 +13,7 @@ class createElectionRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class createElectionRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:255',
+            'details' => 'required',
+            'start_date' => 'required|date',
+            'start_time'=>'required',
+            'end_date'=>'required|date|after:start_date',
+            'end_time'=>'required',
+
         ];
     }
 }

@@ -37,8 +37,8 @@ class ElectionController extends Controller
         return view('elections.create');
     }
 
-    public function store(){
-        $input=Request::all();
+    public function store(Requests\createElectionRequest $request){
+        $input=$request->all();
 
         $user_id=Auth::user()->id;
         //this will return a collection(array).so need to take 1st element

@@ -70,6 +70,7 @@
              </div>
          </div>
      </div>
+     @include('errors.errorlist')
  </div>
 
 
