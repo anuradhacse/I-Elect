@@ -25,7 +25,15 @@
         .fa-btn {
             margin-right: 6px;
         }
-
+        .navbar-default {
+            background-color: #afd9ee;
+            border-color: #E7E7E7;
+            opacity: 0.9;
+        }
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            color: #1f1c1a;
+        }
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
