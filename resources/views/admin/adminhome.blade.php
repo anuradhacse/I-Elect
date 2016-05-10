@@ -15,10 +15,11 @@
                                 <th>Election name</th>
                                 <th>Start date</th>
                                 <th>End date</th>
-
                                 <th>No.of Candidates</th>
                                 <th>No.of voters</th>
+                                <th>votes</th>
                                 <th>Status</th>
+                                <th>Action</th>
 
 
 
@@ -29,200 +30,31 @@
                                 <th>Election name</th>
                                 <th>Start date</th>
                                 <th>End date</th>
-
                                 <th>No.of Candidates</th>
                                 <th>No.of voters</th>
+                                <th>votes</th>
                                 <th>Status</th>
+                                <th>Action</th>
 
 
                             </tr>
                             </tfoot>
                             <tbody>
-                            <tr>
-                                <td>Project manager selection</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>6</td>
-                                <td>20</td>
-                                <td>Finished</td>
 
+                            @foreach($elections as $election)
+                                <tr>
+                                    <td>{{$election->name}}</td>
+                                    <td>{{$election->details}}</td>
+                                    <td>{{$election->start_date}}</td>
+                                    <td>{{$election->end_date}}</td>
+                                    <td>{{$election->name}}</td>
+                                    <td>{{$election->name}}</td>
+                                    <td>finished</td>
+                                    <td>delete</td>
+                                </tr>
 
+                                @endforeach
 
-                            </tr>
-                            <tr>
-                                <td>Monitor selection of grade10</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>24</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Project leader election</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>8</td>
-                                <td>21</td>
-                                <td>Finished</td>
-
-                            </tr>
-                            <tr>
-                                <td>Swimming captain selction</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>7</td>
-                                <td>29</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Batch rep selection vote</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>600</td>
-                                <td>Finished</td>
-                            </tr>
-
-                            <tr>
-                                <td>Project manager selection</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>6</td>
-                                <td>20</td>
-                                <td>Finished</td>
-
-
-
-                            </tr>
-                            <tr>
-                                <td>Monitor selection of grade10</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>24</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Project leader election</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>8</td>
-                                <td>21</td>
-                                <td>Finished</td>
-
-                            </tr>
-                            <tr>
-                                <td>Swimming captain selction</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>7</td>
-                                <td>29</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Batch rep selection vote</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>600</td>
-                                <td>Finished</td>
-                            </tr>
-                            <tr>
-                                <td>Project manager selection</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>6</td>
-                                <td>20</td>
-                                <td>Finished</td>
-
-
-
-                            </tr>
-                            <tr>
-                                <td>Monitor selection of grade10</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>24</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Project leader election</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>8</td>
-                                <td>21</td>
-                                <td>Finished</td>
-
-                            </tr>
-                            <tr>
-                                <td>Swimming captain selction</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>7</td>
-                                <td>29</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Batch rep selection vote</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>600</td>
-                                <td>Finished</td>
-                            </tr>
-                            <tr>
-                                <td>Project manager selection</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>6</td>
-                                <td>20</td>
-                                <td>Finished</td>
-
-
-
-                            </tr>
-                            <tr>
-                                <td>Monitor selection of grade10</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>24</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Project leader election</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>8</td>
-                                <td>21</td>
-                                <td>Finished</td>
-
-                            </tr>
-                            <tr>
-                                <td>Swimming captain selction</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>7</td>
-                                <td>29</td>
-                                <td>Draft</td>
-
-                            </tr>
-                            <tr>
-                                <td>Batch rep selection vote</td>
-                                <td>2016/05/04</td>
-                                <td>2016/05/04</td>
-                                <td>3</td>
-                                <td>600</td>
-                                <td>Finished</td>
-                            </tr>
 
 
 

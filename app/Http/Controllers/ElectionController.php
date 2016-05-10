@@ -30,7 +30,7 @@ class ElectionController extends Controller
 
         $elections=$admin[0]->elections;
 
-        return view('elections.show',compact('elections'));
+        return view('admin.adminhome',compact('elections'));
     }
 
     public function create(){
@@ -43,14 +43,8 @@ class ElectionController extends Controller
         $user_id=Auth::user()->id;
         //this will return a collection(array).so need to take 1st element
         $admin=Admin::where('user_id',$user_id)->get();
-        $id=$admin[0]->id;
-
-
-        $election= Election::create();
-        $election['admin_id']=$id;
-
-
-
+        //getting the admin object and creating an object.here it will automatically update admin_id (foriegn key)
+        $admin[0]->elections()->create($input);
 
         return redirect('elections');
     }

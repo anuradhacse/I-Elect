@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Admin;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,18 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('admin.adminhome');
+        $user_id=\Auth::user()->id;
+//return a collection
+        $admin= Admin::where('user_id',$user_id)->get();
+
+
+
+//can get null pointer exception if $admin is null
+
+        $elections=$admin[0]->elections;
+
+        return view('admin.adminhome',compact('elections'));
+
     }
     public function voterHome()
     {
