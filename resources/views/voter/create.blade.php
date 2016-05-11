@@ -48,17 +48,30 @@
 
 
                             {!! Form::submit('Add voter',['class' => 'btn btn-primary form-control']) !!}
+                            {!! Form::close() !!}
+                            <hr>
+                            @include('errors.errorlist')
+
+                            <!-- dispaly voters who have already added-->
+
+
+
+                            @if($voters)
+                                @foreach($voters as $voter)
+                                    {{$voter->name}}<br>
+                                    @endforeach
+                                @endif
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @include('errors.errorlist')
+
     </div>
 
 
-    {!! Form::close() !!}
+
 
 
 @stop

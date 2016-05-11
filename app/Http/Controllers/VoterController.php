@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Election;
 use App\Voter;
 use Request;
 use App\User;
 
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
 
 class VoterController extends Controller
 {
@@ -20,7 +22,9 @@ class VoterController extends Controller
 
     }
     public function create($id){
-        return view('voter.create',compact('id'));
+
+        $voters=\App\Election::find($id)->voters()->get();
+        return view('voter.create',compact('id','voters'));
     }
 
     /**
@@ -46,10 +50,10 @@ class VoterController extends Controller
 
 
         ]);
+//this is the way to insert values to many to many relation in(table election_voter)
+        Election::find($input['election_id'])->voters()->attach($voter['id']);
 
-
-      //  dd($input['election_id']);
-            return redirect('elections/$');
+        return Redirect::back()->with('message','Voter Added !');
 
 
 
