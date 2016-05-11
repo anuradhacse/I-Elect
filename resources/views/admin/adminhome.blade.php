@@ -109,7 +109,7 @@
 
                     @foreach($elections as $election)
                         <tr>
-                            <td>{{$election->name}}</td>
+                            <td><a href="{{action('ElectionController@show',$election->id)}}">{{$election->name}}</a> </td>
                             <td>{{$election->details}}</td>
                             <td>{{$election->start_date}}</td>
                             <td>{{$election->end_date}}</td>

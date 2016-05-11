@@ -1,48 +1,92 @@
-<!doctype html>
-<html>
-<head>
-    <title>
-        Document
-    </title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-</head>
+@extends('layouts.app')
 
-<body>
-<div class="container">
-    @if(Session::has('flash_message'))
+@section('head')
+    <style>
+        .with-nav-tabs.panel-info .nav-tabs > li > a,
+        .with-nav-tabs.panel-info .nav-tabs > li > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > li > a:focus {
+            color: #31708f;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > .open > a,
+        .with-nav-tabs.panel-info .nav-tabs > .open > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > .open > a:focus,
+        .with-nav-tabs.panel-info .nav-tabs > li > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > li > a:focus {
+            color: #31708f;
+            background-color: #bce8f1;
+            border-color: transparent;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > li.active > a,
+        .with-nav-tabs.panel-info .nav-tabs > li.active > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > li.active > a:focus {
+            color: #31708f;
+            background-color: #fff;
+            border-color: #bce8f1;
+            border-bottom-color: transparent;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu {
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a {
+            color: #31708f;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+            background-color: #bce8f1;
+        }
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+        .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+            color: #fff;
+            background-color: #31708f;
+        }
+        .panel-heading{
+            height:53px;
+        }
 
-        <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            {{ Session::get('flash_message') }}
+    </style>
+@endsection
 
+@section('content')
+
+    <div class="col-md-10 col-md-offset-1">
+
+        <div class="panel with-nav-tabs panel-info ">
+
+            <div class="panel-heading">
+
+                <ul class="nav nav-tabs ">
+                    <li class="active"><a href="#tab1info" data-toggle="tab">Elections</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">{{$election->name}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- remove data-toggle="tab" otherwise href will not work -->
+                            <li><a href="#tab4info" data-toggle="tab">Edit Election</a></li>
+                            <li><a href="{{action('VoterController@create',$election->id)}}" >Add Voters</a></li>
+                            <li><a href="{{action('CandidateController@create')}}" >Add Candidates</a></li>
+                            <li><a href="#tab5info" data-toggle="tab">Finalize</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#" >Activity Log</a></li>
+                </ul>
+            </div>
+
+            <div class="panel-body">
+                <div class="">
+                    <h1>Election Manager</h1>
+                    <hr>
+                </div>
+                Election name:{{$election->name}}<br>
+                Election details:{{$election->details}}<br>
+                Starting date:{{$election->start_date}}<br>
+                Starting time:{{$election->start_time}}<br>
+                Ending Date:{{$election->end_date}}<br>
+                Ending time:{{$election->end_time}}<br>
+
+            </div>
         </div>
-    @endif
-    @yield('content')
-
-        <h1>
-            Your Elections
-        </h1>
-
-        <hr/>
-
-        @foreach($elections as $election)
-
-            <article>
-                <!-- this is a better way to make href..other one will make problems   -->
-                <h2>  {{ $election->name}} </h2>
-            </article>
-        @endforeach
-</div>
-
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="//code.jquery.com/jquery.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-@yield('footer')
-</body>
-
-
-
-</html>
-
+    </div>
+    @endsection

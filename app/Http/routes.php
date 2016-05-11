@@ -37,10 +37,11 @@ Route::get('/voterhome', 'HomeController@voterHome');
 Route::get('elections','ElectionController@index');
 Route::get('elections/create','ElectionController@create');
 Route::post('elections','ElectionController@store');
+Route::get('elections/{id}/show','ElectionController@show');
 
 //voter routes
 
-Route::get('voters/create','VoterController@create');
+Route::get('voters/{id}/create','VoterController@create');
 Route::post('voters','VoterController@store');
 
 //candidate routes

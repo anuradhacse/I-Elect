@@ -12,7 +12,13 @@ protected $fillable=['name','details','start_time','end_time','start_date','end_
      * an election belong to specific admin
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function admin(){
-    return $this->belongsTo('App\Admin');
-}
+    public function admin()
+    {
+        return $this->belongsTo('App\Admin');
+
+    }
+        public function voters(){
+             return $this->belongsToMany('App\Voter');
+        }
+
 }

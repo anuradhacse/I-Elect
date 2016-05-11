@@ -24,8 +24,6 @@ class ElectionController extends Controller
 //return a collection
         $admin=Admin::where('user_id',$user_id)->get();
 
-
-
 //can get null pointer exception if $admin is null
 
         $elections=$admin[0]->elections;
@@ -47,5 +45,11 @@ class ElectionController extends Controller
         $admin[0]->elections()->create($input);
 
         return redirect('elections');
+    }
+
+    public function show($id){
+
+        $election=Election::findOrFail($id);
+        return view('elections.show',compact('election'));
     }
 }

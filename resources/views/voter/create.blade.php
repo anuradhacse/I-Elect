@@ -18,11 +18,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Voters Dashboard | Eligible Elections | View Candidate </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Add voter to Election: </div>
 
                     <div class="panel-body">
                         {!! Form::open(['action'=>'VoterController@store']) !!}
+                        <!-- this is the election id of current election where this voter is going to vote -->
+                        {!! Form::hidden('election_id',$id) !!}
                         <div class="form-group">
 
                             {!! Form::label('name','Name Of the Voter:') !!}

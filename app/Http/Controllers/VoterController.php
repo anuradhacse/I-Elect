@@ -19,8 +19,8 @@ class VoterController extends Controller
     public function index(){
 
     }
-    public function create(){
-        return view('voter.create');
+    public function create($id){
+        return view('voter.create',compact('id'));
     }
 
     /**
@@ -48,8 +48,8 @@ class VoterController extends Controller
         ]);
 
 
-
-            return $voter;
+      //  dd($input['election_id']);
+            return redirect('elections/$');
 
 
 

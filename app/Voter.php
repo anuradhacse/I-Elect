@@ -11,4 +11,9 @@ class Voter extends Model
      * @var array
      */
     protected $fillable=['name','user_id'];
+
+
+    public function elections(){
+        return $this->belongsToMany('App\Election');
+    }
 }
