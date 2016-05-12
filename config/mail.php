@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => "webmaster@ielect.com", 'name' => "WebMaster"],
 
     /*
     |--------------------------------------------------------------------------

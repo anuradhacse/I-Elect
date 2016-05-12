@@ -54,13 +54,48 @@
 
                             <!-- dispaly voters who have already added-->
 
+                            <table id="example" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Voter name</th>
+                                    <th>Email</th>
+                                    <th>Valid Email</th>
+                                    <th>Voted</th>
+                                    <th>Password</th>
+                                    <th>Action</th>
 
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Voter name</th>
+                                    <th>Email</th>
+                                    <th>Valid Email</th>
+                                    <th>Voted</th>
+                                    <th>Password</th>
+                                    <th>Action</th>
 
-                            @if($voters)
+                                </tr>
+                                </tfoot>
+                                <tbody>
+
                                 @foreach($voters as $voter)
-                                    {{$voter->name}}<br>
-                                    @endforeach
-                                @endif
+                                    <tr>
+                                        <td>{{$voter->name}}</td>
+                                        <td>{{$voter->name}}</td>
+                                        <td>{{$voter->name}}</td>
+                                        <td>{{$voter->name}}</td>
+                                        <td>{{$voter->name}}</td>
+                                        <td>{{$voter->name}}</td>
+
+                                    </tr>
+
+                                @endforeach
+
+
+
+                                </tbody>
+                            </table>
 
                         </div>
                     </div>
@@ -72,6 +107,11 @@
 
 
 
+    <script type="text/javascript">
 
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
 
 @stop

@@ -49,3 +49,11 @@ Route::post('voters','VoterController@store');
 Route::get('candidates/create','CandidateController@create');
 Route::post('candidates','CandidateController@store');
 
+Route::get('test',function(){
+    Mail::send('auth.emails.test', [], function ($m) {
+        $m->from('me@ielect.com', 'i-Elect Application -Selected for voting');
+        $m->to("kasunedward48@gmail.com","Anuradha")->subject('Your Reminder!');
+    });
+    return "Success";
+});
+
