@@ -25,7 +25,7 @@ class createVoterRequest extends Request
     {
         return [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255',
             'password' => 'required|min:6',
         ];
     }
