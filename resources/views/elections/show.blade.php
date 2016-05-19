@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-@include('partials.navcsspartial')
+    @include('partials.navcsspartial')
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
 
         <div class="panel with-nav-tabs panel-info ">
 
-       @include('partials.navpartial')
+            @include('partials.navpartial')
 
             <div class="panel-body">
                 <div class="">
@@ -27,4 +27,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection

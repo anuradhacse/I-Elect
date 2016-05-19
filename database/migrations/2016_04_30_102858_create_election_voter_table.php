@@ -17,7 +17,6 @@ class CreateElectionVoterTable extends Migration
             $table->foreign('election_id')->references('id')->on('elections')->onDelete('cascade');
             $table->integer('voter_id')->unsigned()->index();
             $table->foreign('voter_id')->references('id')->on('voters')->onDelete('cascade');
-
         });
     }
 

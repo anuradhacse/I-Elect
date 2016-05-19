@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
+<<<<<<< HEAD
    @include('partials.navcsspartial')
 
 
@@ -17,6 +18,30 @@
 
                                 <!-- this is the election id of current election where this candidate is participating-->
                         {!! Form::hidden('election_id',$id) !!}
+=======
+    <style>
+        .form-group{
+
+
+            padding-left: 10%;
+            padding-right: 5%;
+
+        }
+
+    </style>
+@stop
+
+@section('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Voters Dashboard | Eligible Elections | View Candidate </div>
+
+                    <div class="panel-body">
+                        {!! Form::open(['action'=>'CandidateController@store','files'=>true]) !!}
+>>>>>>> 3eed0ff24e20170dca0cdb1ec39b1e59cc0d45a7
                         <div class="form-group">
 
                             {!! Form::label('name','Name Of the Candidate:') !!}
@@ -47,6 +72,7 @@
 
 
                             {!! Form::submit('Add Candidate',['class' => 'btn btn-primary form-control']) !!}
+<<<<<<< HEAD
                             {!! Form::close() !!}
                             @include('errors.errorlist')
                                     <br>
@@ -95,11 +121,14 @@
 
                                 </tbody>
                             </table>
+=======
+>>>>>>> 3eed0ff24e20170dca0cdb1ec39b1e59cc0d45a7
 
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
 
 
@@ -113,3 +142,14 @@
 
 
 @endsection
+=======
+        </div>
+        @include('errors.errorlist')
+    </div>
+
+
+    {!! Form::close() !!}
+
+
+@stop
+>>>>>>> 3eed0ff24e20170dca0cdb1ec39b1e59cc0d45a7

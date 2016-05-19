@@ -7,6 +7,7 @@
         .with-nav-tabs.panel-info .nav-tabs > li > a:focus {
             color: #31708f;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > .open > a,
         .with-nav-tabs.panel-info .nav-tabs > .open > a:hover,
         .with-nav-tabs.panel-info .nav-tabs > .open > a:focus,
@@ -16,6 +17,7 @@
             background-color: #bce8f1;
             border-color: transparent;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > li.active > a,
         .with-nav-tabs.panel-info .nav-tabs > li.active > a:hover,
         .with-nav-tabs.panel-info .nav-tabs > li.active > a:focus {
@@ -24,25 +26,30 @@
             border-color: #bce8f1;
             border-bottom-color: transparent;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu {
             background-color: #d9edf7;
             border-color: #bce8f1;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a {
             color: #31708f;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
             background-color: #bce8f1;
         }
+
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a,
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
         .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
             color: #fff;
             background-color: #31708f;
         }
-        .panel-heading{
-            height:53px;
+
+        .panel-heading {
+            height: 53px;
         }
 
     </style>
@@ -53,7 +60,7 @@
 
         <div class="panel with-nav-tabs panel-info ">
 
-           @include('partials.adminnav')
+            @include('partials.adminnav')
 
             <div class="panel-body">
                 <div class="">
@@ -72,7 +79,6 @@
                         <th>votes</th>
                         <th>Status</th>
                         <th>Action</th>
-
 
 
                     </tr>
@@ -95,7 +101,8 @@
 
                     @foreach($elections as $election)
                         <tr>
-                            <td><a href="{{action('ElectionController@show',$election->id)}}">{{$election->name}}</a> </td>
+                            <td><a href="{{action('ElectionController@show',$election->id)}}">{{$election->name}}</a>
+                            </td>
                             <td>{{$election->details}}</td>
                             <td>{{$election->start_date}}</td>
                             <td>{{$election->end_date}}</td>
@@ -105,10 +112,11 @@
                             <td>{!! Form::open(['method'=>'DELETE','action' => ['ElectionController@delete', $election->id]])  !!}
                                 <button type="submit" class="btn btn-danger btn-mini">Delete</button>
                                 {!! Form::close() !!}</td>
+
+                            <td>delete</td>
                         </tr>
 
                     @endforeach
-
 
 
                     </tbody>
@@ -119,8 +127,8 @@
 
     <script type="text/javascript">
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#example').DataTable();
-        } );
+        });
     </script>
 @endsection

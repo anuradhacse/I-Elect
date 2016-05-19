@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "ad65b6e4ea1c37df2825edd42cb1f624",
     "content-hash": "edb6d1bad9c5e355b03fed747b9c8c68",
+=======
+    "hash": "ed669e682ba2ca2ef5be20550a775944",
+    "content-hash": "9d979d3295e7a83b845ac315d68931e9",
+>>>>>>> 3eed0ff24e20170dca0cdb1ec39b1e59cc0d45a7
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -471,6 +476,7 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+<<<<<<< HEAD
             "name": "laracasts/flash",
             "version": "2.0.0",
             "source": {
@@ -514,6 +520,8 @@
             "time": "2016-03-14 15:55:34"
         },
         {
+=======
+>>>>>>> 3eed0ff24e20170dca0cdb1ec39b1e59cc0d45a7
             "name": "laravel/framework",
             "version": "v5.2.31",
             "source": {

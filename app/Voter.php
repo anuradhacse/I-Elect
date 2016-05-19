@@ -14,6 +14,6 @@ class Voter extends Model
 
 
     public function elections(){
-        return $this->belongsToMany('App\Election')->withPivot('candidate_id');;
+        return $this->belongsToMany('App\Election')->withPivot('candidate_id');
     }
 }
