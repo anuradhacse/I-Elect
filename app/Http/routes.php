@@ -23,9 +23,6 @@ Route::get('/home', function () {
     return view('theme.home');
 });
 
-Route::get('/contactspage', function () {
-    return view('com.contacts');
-});
 
 Route::auth();
 
@@ -54,8 +51,6 @@ Route::post('voters/vote', 'VoterController@vote');
 
 Route::get('candidates/{id}/create', 'CandidateController@create');
 Route::get('candidate/{id}/show', 'CandidateController@show');
-
-
 Route::post('candidates', 'CandidateController@store');
 
 Route::get('test', function () {
