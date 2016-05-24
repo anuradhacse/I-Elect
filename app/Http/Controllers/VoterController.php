@@ -64,6 +64,10 @@ class VoterController extends Controller
                 flash()->overlay('This voter has already been selected for this election', 'Error detected');
                 return Redirect::back()->with('message', 'Voter Added !');
             }
+            //creating voter election relationship
+            Election::find($input['election_id'])->voters()->attach($ex_voter['id']);
+            flash()->info('Voter added to the election successfully');
+            return Redirect::back()->with('message', 'Voter Added !');
         }
 
         $user = User::create([
@@ -82,9 +86,7 @@ class VoterController extends Controller
         ]);
 //this is the way to insert values to many to many relation in(table election_voter)
         Election::find($input['election_id'])->voters()->attach($voter['id']);
-
         flash()->info('Voter Added Successfully');
-
         return Redirect::back()->with('message', 'Voter Added !');
 
     }

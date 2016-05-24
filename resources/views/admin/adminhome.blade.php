@@ -52,10 +52,10 @@
                         <tr>
                             <td><a href="{{action('ElectionController@show',$election->id)}}">{{$election->name}}</a>
                             </td>
-                            <td>{{$election->details}}</td>
                             <td>{{$election->start_date}}</td>
                             <td>{{$election->end_date}}</td>
-                            <td>{{$election->name}}</td>
+                            <td>{{$election->candidates->count()}}</td>
+                            <td>{{$election->voters->count()}}</td>
                             <td>{{$election->name}}</td>
                             <td>finished</td>
                             <td>{!! Form::open(['method'=>'DELETE','action' => ['ElectionController@delete', $election->id]])  !!}
