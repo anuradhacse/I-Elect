@@ -108,6 +108,7 @@ class ElectionController extends Controller
      */
     public function delete($id)
     {
+        
         $election = Election::findOrFail($id);
         $election->destroy($id);
         flash()->success('successfully deleted the election');

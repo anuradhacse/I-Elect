@@ -112,6 +112,7 @@ class VoterController extends Controller
 
         $c = Election::find($election_id)->voters()->findOrFail($voter['id'])->pivot->candidate_id;
 
+
         //filing candidate_id co;umn in the pivot table election_voter
         if ($c == null) {
             Election::find($election_id)->voters()->sync([$voter['id'] => ['candidate_id' => $candidate_id]], false);
