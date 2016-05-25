@@ -24,6 +24,9 @@
                     <hr>
                     {!! Form::open(['action'=>'VoterController@vote']) !!}
                     {!! Form::hidden('election_id',$id) !!}
+                    @if($candidates->count()==0)
+                        <h4> No candidates available for this election</h4>
+                        @endif
                     @foreach($candidates as $candidate)
                         {!! Form::radio('candidate_id', $candidate->id) !!}
                         <a href="{{action('CandidateController@show',$candidate->id)}}">{{$candidate->name}}</a> <br>

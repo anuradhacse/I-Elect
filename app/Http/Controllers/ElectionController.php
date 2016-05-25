@@ -71,8 +71,29 @@ class ElectionController extends Controller
 
     public function vote($id)
     {
+        $election=Election::find($id);
         $candidates = Election::find($id)->candidates()->get();
-        return view('voter.vote', compact('candidates', 'id'));
+
+        if($election->end_date<\Carbon\Carbon::today('Asia/Colombo')){
+            flash()->error('this election is over');
+            return Redirect::back();
+        }
+
+         elseif($election->end_date===\Carbon\Carbon::today('Asia/Colombo')){
+
+             if($election->end_time<=\Carbon\Carbon::now('Asia/Colombo')){
+                 flash()->error('this election is over');
+                 return Redirect::back();
+             }
+         }
+
+        else{
+            return view('voter.vote', compact('candidates', 'id'));
+        }
+
+
+
+
     }
 
     public function edit($id)
