@@ -57,7 +57,17 @@
                             <td>{{$election->candidates->count()}}</td>
                             <td>{{$election->voters->count()}}</td>
                             <td>{{$election->name}}</td>
-                            <td>finished</td>
+                            @if($election->end_date<\Carbon\Carbon::today('Asia/Colombo'))
+                                <td>finished </td>
+                            @elseif($election->end_date===\Carbon\Carbon::today('Asia/Colombo'))
+                                @if($election->end_time<=\Carbon\Carbon::now('Asia/Colombo'))
+                                    <td>Finished jjj</td>
+                                    @endif
+                            @else
+                            <td>Draft</td>
+                            @endif
+
+
                             <td>{!! Form::open(['method'=>'DELETE','action' => ['ElectionController@delete', $election->id]])  !!}
                                 <button type="submit" class="btn btn-danger btn-mini">Delete</button>
                                 {!! Form::close() !!}</td>

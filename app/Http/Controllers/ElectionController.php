@@ -55,11 +55,9 @@ class ElectionController extends Controller
 
 
         $user_id = Auth::user()->id;
-        //this will return a collection(array).so need to take 1st element
-
-        $admin = Admin::where('user_id', $user_id)->get();
+        $admin = Admin::where('user_id', $user_id)->first();
         //getting the admin object and creating an object.here it will automatically update admin_id (foriegn key)
-        $election = $admin[0]->elections()->create($input);
+        $admin->elections()->create($input);
         return redirect('elections');
     }
 
@@ -84,6 +82,18 @@ class ElectionController extends Controller
 
     public function update($id, Requests\createElectionRequest $request)
     {
+        $input=$request->all();
+        if($input['end_date']<$input['start_date']){
+            flash()->error('Election end date should be a date after start date');
+            return Redirect::back();
+        }
+        else if($input['end_date']==$input['start_date']){
+            if($input['end_time']<=$input['start_time']){
+                flash()->error('Election end time should be a time after start time');
+                return Redirect::back();
+            }
+        }
+
         $election = Election::findOrFail($id);
         $election->update($request->all());
         flash()->success('successfully updated the information');
