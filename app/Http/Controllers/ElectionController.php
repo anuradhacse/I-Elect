@@ -29,7 +29,8 @@ class ElectionController extends Controller
 
 //can get null pointer exception if $admin is null
 
-        $elections = $admin[0]->elections;
+        $elections1 = $admin[0]->elections;
+        $elections=$elections1->sortBy('created_at');
 
         return view('admin.adminhome', compact('elections'));
     }
@@ -108,7 +109,7 @@ class ElectionController extends Controller
      */
     public function delete($id)
     {
-        
+
         $election = Election::findOrFail($id);
         $election->destroy($id);
         flash()->success('successfully deleted the election');
