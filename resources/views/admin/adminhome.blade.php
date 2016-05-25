@@ -52,8 +52,8 @@
                         <tr>
                             <td><a href="{{action('ElectionController@show',$election->id)}}">{{$election->name}}</a>
                             </td>
-                            <td>{{$election->start_date}}</td>
-                            <td>{{$election->end_date}}</td>
+                            <td>{{$election->start_date->toDateString()}} &nbsp;{{$election->start_time}}</td>
+                            <td>{{$election->end_date->toDateString()}} &nbsp;{{$election->end_time}}</td>
                             <td>{{$election->candidates->count()}}</td>
                             <td>{{$election->voters->count()}}</td>
                             <td>{{$election->name}}</td>

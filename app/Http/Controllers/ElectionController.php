@@ -42,20 +42,24 @@ class ElectionController extends Controller
     public function store(Requests\createElectionRequest $request)
     {
         $input = $request->all();
+        if($input['end_date']<$input['start_date']){
+            flash()->error('Election end date should be a date after start date');
+            return Redirect::back();
+        }
+        else if($input['end_date']==$input['start_date']){
+            if($input['end_time']<=$input['start_time']){
+                flash()->error('Election end time should be a time after start time');
+                return Redirect::back();
+            }
+        }
+
 
         $user_id = Auth::user()->id;
         //this will return a collection(array).so need to take 1st element
 
-
-//        $start_date=Carbon::parse($request['start_date'])->toDateString();
-//        $end_date=Carbon::parse($request['end_date'])->toDateString();
-//        $start_time=Carbon::parse($request['start_time'])->toTimeString();
-//        $end_time=Carbon::parse($request['end_time'])->toTimeString();
-//        dd($start_time,$start_date->year);
         $admin = Admin::where('user_id', $user_id)->get();
         //getting the admin object and creating an object.here it will automatically update admin_id (foriegn key)
         $election = $admin[0]->elections()->create($input);
-        dd($election->start_time);
         return redirect('elections');
     }
 
