@@ -60,7 +60,8 @@
                             @if($election->end_date<\Carbon\Carbon::today('Asia/Colombo'))
                                 <td>finished </td>
                             @elseif($election->end_date->toDateString()==\Carbon\Carbon::today('Asia/Colombo')->toDateString())
-                                @if($election->end_time->toTimeString<=\Carbon\Carbon::now('Asia/Colombo')->toTimeString())
+
+                                @if($election->end_time <=\Carbon\Carbon::now('Asia/Colombo')->toTimeString())
                                     <td>Finished </td>
                                     @else
                                     <td>Draft</td>
