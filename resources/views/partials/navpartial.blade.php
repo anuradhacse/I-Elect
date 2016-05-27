@@ -10,7 +10,7 @@
                 <li><a href="{{action('ElectionController@edit',$election->id)}}">Edit Election</a></li>
                 <li><a href="{{action('VoterController@create',$election->id)}}" >Add Voters</a></li>
                 <li><a href="{{action('CandidateController@create',$election->id)}}" >Add Candidates</a></li>
-                <li><a href="#tab5info" >Finalize</a></li>
+                <li><a href="{{action('ElectionController@finalize',$election->id)}}" >Finalize</a></li>
             </ul>
         </li>
         <li><a href="#">Settings</a></li>
