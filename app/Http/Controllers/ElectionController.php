@@ -6,6 +6,7 @@ use App\Admin;
 use App\Election;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Request;
 use Carbon\Carbon;
 
@@ -135,5 +136,26 @@ class ElectionController extends Controller
         $election->destroy($id);
         flash()->success('successfully deleted the election');
         return redirect('elections');
+    }
+
+    /**
+     * finalize an election
+     * check for at least one candidate
+     * check for at least one voter
+     * checking start date in future
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function finalize($id){
+        $election = Election::findOrFail($id);
+        $voter_count=$election->voters()->count();
+        $candidate_count=$election->candidates()->count();
+        if($voter_count==0){
+           Session::flash('voter_error','No voter has been selected');
+        }
+        if($candidate_count==0){
+            Session::flash('candidate_error','No voter has been selected');
+        }
+        return view('elections.show', compact('election'));
     }
 }

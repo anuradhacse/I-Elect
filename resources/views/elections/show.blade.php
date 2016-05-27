@@ -17,14 +17,84 @@
                     <h1>Election Manager</h1>
                     <hr>
                 </div>
-                Election name:{{$election->name}}<br>
-                Election details:{{$election->details}}<br>
-                Starting date:{{$election->start_date}}<br>
-                Starting time:{{$election->start_time}}<br>
-                Ending Date:{{$election->end_date}}<br>
-                Ending time:{{$election->end_time}}<br>
+                <table id="example" class="display" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Attributes of Election</th>
+                        <th>Values</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+
+                        <th>Attributes of Election</th>
+                        <th>Values</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+
+                        <tr>
+                            <td>Election name</td>
+                            <td>{{$election->name}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+                        <tr>
+                            <td>Start date</td>
+                            <td>{{$election->start_date->toDateString()}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+                        <tr>
+                            <td>Start time</td>
+                            <td>{{$election->start_time}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+                        <tr>
+                            <td>End date</td>
+                            <td>{{$election->end_date->toDateString()}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+                        <tr>
+                            <td>End time</td>
+                            <td>{{$election->end_time}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+                        <tr>
+                            <td>No.of Voters</td>
+                            <td>{{$election->voters->count()}}
+                            </td>
+                            <td>hari</td>
+                        </tr>
+
+                        <tr>
+                            <td>No.of Candidates</td>
+                            <td>{{$election->candidates->count()}}</td>
+                            <td>hari</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
 
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#example').DataTable(
+                    {
+                        "aaSorting": []
+                    }
+            );
+
+        });
+    </script>
 @endsection
