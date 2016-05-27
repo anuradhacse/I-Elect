@@ -104,12 +104,13 @@ class VoterController extends Controller
         $ongoing_elections=array();
         $future_elections=array();
 
+
         //finished elections
         foreach($elections as $election){
             if($election->end_date<Carbon::today('Asia/Colombo')){
                 $finished_elections[]=$election;
             }
-            else if($election->end_date==Carbon::today('Asia/Colombo')){
+            else if($election->end_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
                 if($election->end_time<=Carbon::now('Asia/Colombo')){
                     $finished_elections[]=$election;
                 }
@@ -118,6 +119,7 @@ class VoterController extends Controller
                 }
                 else{
                     $future_elections[]=$election;
+
                 }
 
             }
@@ -125,8 +127,9 @@ class VoterController extends Controller
             elseif($election->start_date<Carbon::today('Asia/Colombo') && $election->end_date>=Carbon::today('Asia/Colombo')){
                 $ongoing_elections[]=$election;
             }
-            elseif($election->start_date==Carbon::today('Asia/Colombo')){
+            elseif($election->start_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
                 if($election->start_time<=Carbon::now('Asia/Colombo')){
+
                     $ongoing_elections[]=$election;
                 }
                 else{
@@ -137,6 +140,7 @@ class VoterController extends Controller
             }
             else{
                 $future_elections[]=$election;
+
             }
 
         }
