@@ -151,10 +151,20 @@ class ElectionController extends Controller
         $voter_count=$election->voters()->count();
         $candidate_count=$election->candidates()->count();
         if($voter_count==0){
-           Session::flash('voter_error','No voter has been selected');
+           Session::flash('voter_error','Please Add Voters');
+
         }
         if($candidate_count==0){
-            Session::flash('candidate_error','No voter has been selected');
+            Session::flash('candidate_error','Please Add Candidates');
+        }
+
+        if($election->start_date<=Carbon::today('Asia/Colombo')){
+            Session::flash('start_date_error','Please Select a Future Date as start date');
+
+        }
+        if($election->end_date<Carbon::today('Asia/Colombo')){
+            Session::flash('end_date_error','Please Select a Future Date as End date');
+            dd('asas');
         }
         return view('elections.show', compact('election'));
     }

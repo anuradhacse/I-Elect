@@ -2,6 +2,7 @@
 
 @section('head')
     @include('partials.navcsspartial')
+
 @endsection
 
 @section('content')
@@ -39,43 +40,75 @@
                             <td>Election name</td>
                             <td>{{$election->name}}
                             </td>
-                            <td>hari</td>
+                            <td class="alert-success">Valid</td>
                         </tr>
                         <tr>
                             <td>Start date</td>
                             <td>{{$election->start_date->toDateString()}}
                             </td>
-                            <td>hari</td>
+                           @if (Session::has('start_date_error'))
+                                  <td class="alert-danger">{{ Session::get('start_date_error') }}</td>
+
+                            @else
+                                <td class="alert-success">Valid</td>
+                            @endif
+
                         </tr>
                         <tr>
                             <td>Start time</td>
                             <td>{{$election->start_time}}
                             </td>
-                            <td>hari</td>
+                            <td class="alert-success">Valid</td>
                         </tr>
                         <tr>
                             <td>End date</td>
                             <td>{{$election->end_date->toDateString()}}
                             </td>
-                            <td>hari</td>
+                            @if (Session::has('end_date_error'))
+
+                                    <td class="alert-danger">  {{ Session::get('end_date_error') }}</td>
+
+
+                            @else
+                                <td class="alert-success">Valid</td>
+                            @endif
+
                         </tr>
                         <tr>
                             <td>End time</td>
                             <td>{{$election->end_time}}
                             </td>
-                            <td>hari</td>
+                            <td class="alert-success">Valid</td>
                         </tr>
                         <tr>
                             <td>No.of Voters</td>
                             <td>{{$election->voters->count()}}
                             </td>
-                            <td>hari</td>
+                            @if (Session::has('voter_error'))
+
+                                        <td class="alert-danger">{{ Session::get('voter_error') }}</td>
+
+
+
+                            @else
+                                <td class="alert-success">Valid</td>
+                            @endif
+
                         </tr>
 
                         <tr>
                             <td>No.of Candidates</td>
                             <td>{{$election->candidates->count()}}</td>
-                            <td>hari</td>
+                @if (Session::has('candidate_error'))
+
+                                        <td class="alert-danger">{{ Session::get('candidate_error') }}</td>
+
+
+
+                            @else
+                                <td class="alert-success">Valid</td>
+                            @endif
+
                         </tr>
 
 
