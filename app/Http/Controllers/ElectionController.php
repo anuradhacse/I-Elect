@@ -164,8 +164,8 @@ class ElectionController extends Controller
         }
         if($election->end_date<Carbon::today('Asia/Colombo')){
             Session::flash('end_date_error','Please Select a Future Date as End date');
-            dd('asas');
+
         }
-        return view('elections.show', compact('election'));
+        return view('elections.finalize', compact('election'));
     }
 }

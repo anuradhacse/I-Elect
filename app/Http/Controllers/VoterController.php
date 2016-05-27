@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Election;
 use App\Voter;
+use Carbon\Carbon;
 use Laracasts\Flash\Flash;
 use Request;
 use App\User;
@@ -97,7 +98,49 @@ class VoterController extends Controller
         $auth_user = \Auth::user()->id;
         $voter = Voter::where('user_id', $auth_user)->first();
         $elections = Voter::find($voter['id'])->elections()->get();
-        return view('voter.voterhome', compact('elections'));
+        //voters should be informed with finishes elections and ongoing elections
+        //they cant vote in finished elections
+        $finished_elections=array();
+        $ongoing_elections=array();
+        $future_elections=array();
+
+        //finished elections
+        foreach($elections as $election){
+            if($election->end_date<Carbon::today('Asia/Colombo')){
+                $finished_elections[]=$election;
+            }
+            else if($election->end_date==Carbon::today('Asia/Colombo')){
+                if($election->end_time<=Carbon::now('Asia/Colombo')){
+                    $finished_elections[]=$election;
+                }
+                elseif($election->start_time<=Carbon::now('Asia/Colombo')){
+                    $ongoing_elections[]=$election;
+                }
+                else{
+                    $future_elections[]=$election;
+                }
+
+            }
+            //ongoing elections
+            elseif($election->start_date<Carbon::today('Asia/Colombo') && $election->end_date>=Carbon::today('Asia/Colombo')){
+                $ongoing_elections[]=$election;
+            }
+            elseif($election->start_date==Carbon::today('Asia/Colombo')){
+                if($election->start_time<=Carbon::now('Asia/Colombo')){
+                    $ongoing_elections[]=$election;
+                }
+                else{
+                    $future_elections[]=$election;
+                }
+
+
+            }
+            else{
+                $future_elections[]=$election;
+            }
+
+        }
+        return view('voter.voterhome', compact('elections','future_elections','ongoing_elections','finished_elections'));
 
 
     }

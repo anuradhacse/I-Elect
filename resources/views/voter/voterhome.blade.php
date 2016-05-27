@@ -19,16 +19,31 @@
             </div>
 
             <div class="panel-body">
-                <div class="">
+
                     <h1>Voter Manager</h1>
                     <hr>
-                    @foreach($elections as $election)
+                    <h4>Ongoing Elections</h4>
+                    @foreach($ongoing_elections as $election)
 
                         <a href="{{action('ElectionController@vote',$election->id)}}">{{$election->name}}</a>
                         <br>
                         @endforeach
+                    <hr>
+                <h4>Future Elections</h4>
+                @foreach($future_elections as $election)
 
-        </div>
+                    <a href="{{action('ElectionController@vote',$election->id)}}">{{$election->name}}</a>
+                    <br>
+                @endforeach
+                <hr>
+                <h4>Finished Elections</h4>
+                @foreach($finished_elections as $election)
+
+                    <a href="{{action('ElectionController@vote',$election->id)}}">{{$election->name}}</a>
+                    <br>
+                @endforeach
+
+
     </div>
         </div>
     </div>
