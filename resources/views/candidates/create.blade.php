@@ -56,22 +56,20 @@
                     <table id="example" class="display" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th>Voter name</th>
+                            <th>Candidate Name</th>
                             <th>Email</th>
-                            <th>Valid Email</th>
-                            <th>Voted</th>
-                            <th>Password</th>
+                            <th>Description</th>
+                            <th>Image</th>
                             <th>Action</th>
 
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Voter name</th>
+                            <th>Candidate Name</th>
                             <th>Email</th>
-                            <th>Valid Email</th>
-                            <th>Voted</th>
-                            <th>Password</th>
+                            <th>Description</th>
+                            <th>Image</th>
                             <th>Action</th>
 
                         </tr>
@@ -81,11 +79,13 @@
                         @foreach($candidates as $candidate)
                             <tr>
                                 <td>{{$candidate->name}}</td>
-                                <td>{{$candidate->name}}</td>
-                                <td>{{$candidate->name}}</td>
-                                <td>{{$candidate->name}}</td>
-                                <td>{{$candidate->name}}</td>
-                                <td>{{$candidate->name}}</td>
+                                <td>{{$candidate->email}}</td>
+                                <td>{{$candidate->description}}</td>
+                                <td><img src="{{asset('uploads/'.$candidate->image_path)}}" ></td>
+                                <td>{!! Form::open(['method'=>'DELETE','action' => ['CandidateController@delete', $candidate->id]])  !!}
+                                    {!! Form::hidden('election_id',$id) !!}
+                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                                    {!! Form::close() !!}</td></td>
 
                             </tr>
 

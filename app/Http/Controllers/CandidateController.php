@@ -87,5 +87,27 @@ class CandidateController extends Controller
         $candidate = Candidate::findOrFail($id);
         return view('candidates.show', compact('candidate'));
     }
+/**
+ * @param $id
+ * @return Redirect
+ * cannot delete a candidate if he has assigned for more than one election
+ * if candidate is in only one election then delete from candidate table
+ * */
+    public function delete(Requests\createVoterDeleteRequest $request,$id){
+        $voter = Voter::findOrFail($id);
+
+        $no_of_elections=$voter->elections()->count();
+        if($no_of_elections==1){
+            $user=User::where('id',$voter['user_id'])->first();
+            $user->destroy($user->id);
+        }
+        else{
+
+            $voter->elections()->detach($request->election_id);
+        }
+
+        flash()->success('successfully deleted the voter');
+        return Redirect::back();
+    }
 
 }

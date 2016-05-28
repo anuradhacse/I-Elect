@@ -76,7 +76,7 @@
                                     @else
                                     <td> Voted</td>
                                     @endif
-                                <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id,$id]])  !!}
+                                <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id]])  !!}
                                     {!! Form::hidden('election_id',$id) !!}
                                     <button type="submit" class="btn btn-danger btn-mini">Delete</button>
                                     {!! Form::close() !!}</td>
