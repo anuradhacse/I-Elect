@@ -195,4 +195,9 @@ class ElectionController extends Controller
         }
         return view('elections.finalize', compact('election'));
     }
+
+    public function results($id){
+
+
+    }
 }

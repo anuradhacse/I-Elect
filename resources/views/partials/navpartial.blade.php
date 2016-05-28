@@ -13,7 +13,7 @@
                 <li><a href="{{action('ElectionController@finalize',$election->id)}}" >Finalize</a></li>
             </ul>
         </li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="{{action('ElectionController@results',$election->id)}}">Results</a></li>
         <li><a href="#" >Activity Log</a></li>
     </ul>
 </div>
