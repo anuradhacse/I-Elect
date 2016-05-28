@@ -38,6 +38,7 @@ Route::get('elections/{id}/show', 'ElectionController@show');
 Route::get('elections/{id}/vote', 'ElectionController@vote');
 Route::get('elections/{id}/edit', 'ElectionController@edit');
 Route::get('elections/{id}/finalize', 'ElectionController@finalize');
+Route::get('elections/{id}/results', 'ElectionController@results');
 Route::patch('elections/{id}', 'ElectionController@update');
 Route::delete('elections/{id}/delete', 'ElectionController@delete');
 

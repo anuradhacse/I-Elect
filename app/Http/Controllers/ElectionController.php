@@ -196,7 +196,14 @@ class ElectionController extends Controller
         return view('elections.finalize', compact('election'));
     }
 
+    /**
+     * showing results to users complete statistics with graphical charts
+     * @param $id
+     */
     public function results($id){
+            $election=Election::findOrFail($id);
+
+            return view('elections.result');
 
 
     }
