@@ -52,7 +52,6 @@
                             <th>Voter name</th>
                             <th>Email</th>
                             <th>Voted</th>
-                            <th>Password</th>
                             <th>Action</th>
 
                         </tr>
@@ -62,7 +61,6 @@
                             <th>Voter name</th>
                             <th>Email</th>
                             <th>Voted</th>
-                            <th>Password</th>
                             <th>Action</th>
 
                         </tr>
@@ -73,8 +71,11 @@
                             <tr>
                                 <td>{{$voter->name}}</td>
                                 <td>{{\App\User::where('id',$voter->user_id)->first()->email}}</td>
-                                <td>{{$voter->name}}</td>
-                                <td>{{\App\User::where('id',$voter->user_id)->first()->password}}</td>
+                                @if($election->voters()->findOrFail($voter['id'])->pivot->candidate_id==null)
+                                    <td>Not voted</td>
+                                    @else
+                                    <td> Voted</td>
+                                    @endif
                                 <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id,$id]])  !!}
                                     {!! Form::hidden('election_id',$id) !!}
                                     <button type="submit" class="btn btn-danger btn-mini">Delete</button>

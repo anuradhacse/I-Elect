@@ -203,7 +203,7 @@ class ElectionController extends Controller
     public function results($id){
             $election=Election::findOrFail($id);
 
-            return view('elections.result');
+            return view('elections.result',compact('election'));
 
 
     }
