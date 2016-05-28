@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Laracasts\Flash\Flash;
 use Request;
 use App\User;
+use Mail;
 
 
 use App\Http\Requests;
@@ -77,6 +78,13 @@ class VoterController extends Controller
             'email' => $input['email'],
             'password' => bcrypt($input['password']),
         ]);
+        $data = array( 'email' => $user->email,'name'=>$user->name);
+
+
+        Mail::send('auth.emails.test', $data, function ($m) use($data) {
+            $m->from('anuradha@ielect.com', 'iElect-online elections');
+            $m->to($data['email'], $data['name'])->subject('Welcome to iElect online voting system');
+        });
 
         $voter = Voter::create([
             'candidate_id' => "1",
@@ -87,7 +95,7 @@ class VoterController extends Controller
         ]);
 //this is the way to insert values to many to many relation in(table election_voter)
         Election::find($input['election_id'])->voters()->attach($voter['id']);
-        flash()->info('Voter Added Successfully');
+        flash()->info('Voter Added Successfully.Email has been sent successfully to  '.$input['email']);
         return Redirect::back()->with('message', 'Voter Added !');
 
     }
@@ -186,7 +194,7 @@ class VoterController extends Controller
      * if voter is in only one election then delete from user table
      * more than one then delete only the election reference in election voter table
      */
-    public function delete($id){
+    public function delete(Requests\createVoterDeleteRequest $request,$id){
         $voter = Voter::findOrFail($id);
 
         $no_of_elections=$voter->elections()->count();
@@ -196,7 +204,7 @@ class VoterController extends Controller
         }
         else{
 
-            $voter->elections()->detach();
+            $voter->elections()->detach($request->election_id);
         }
 
         flash()->success('successfully deleted the voter');

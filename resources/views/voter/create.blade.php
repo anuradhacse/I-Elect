@@ -72,11 +72,11 @@
                         @foreach($voters as $voter)
                             <tr>
                                 <td>{{$voter->name}}</td>
-                                <td>{{$voter->email}}</td>
+                                <td>{{\App\User::where('id',$voter->user_id)->first()->email}}</td>
                                 <td>{{$voter->name}}</td>
-                                <td>{{$voter->name}}</td>
+                                <td>{{\App\User::where('id',$voter->user_id)->first()->password}}</td>
                                 <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id,$id]])  !!}
-
+                                    {!! Form::hidden('election_id',$id) !!}
                                     <button type="submit" class="btn btn-danger btn-mini">Delete</button>
                                     {!! Form::close() !!}</td>
 

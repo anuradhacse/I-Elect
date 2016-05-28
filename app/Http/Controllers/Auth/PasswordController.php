@@ -29,4 +29,12 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function redirectPath(){
+
+        if(\Auth::user()->role=='1'){
+            return "/adminhome";
+        }
+        return '/voterhome';
+    }
 }
