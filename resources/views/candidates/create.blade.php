@@ -81,7 +81,7 @@
                                 <td>{{$candidate->name}}</td>
                                 <td>{{$candidate->email}}</td>
                                 <td>{{$candidate->description}}</td>
-                                <td><img src="{{asset('uploads/'.$candidate->image_path)}}" ></td>
+                                <td><img src="{{asset('uploads/'.$candidate->image_path)}}" style="width: 50px;height: 50px"></td>
                                 <td>{!! Form::open(['method'=>'DELETE','action' => ['CandidateController@delete', $candidate->id]])  !!}
                                     {!! Form::hidden('election_id',$id) !!}
                                     <button type="submit" class="btn btn-danger btn-mini">Delete</button>

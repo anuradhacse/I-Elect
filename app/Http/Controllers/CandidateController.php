@@ -44,6 +44,14 @@ class CandidateController extends Controller
         $input = $requests->all();
         $requirement = ['email' => $input['email']];
         $ex_can = Candidate::where($requirement)->first();
+
+        if (Input::hasFile('image_path')) {
+            $file = Input::file('image_path');
+            $file->move('uploads', $file->getClientOriginalName());
+
+
+        }
+
         if ($ex_can['exists']) {
             $ex_election = Candidate::find($ex_can['id'])->elections()->having('election_id', '=', $input['election_id'])->first();
 
@@ -52,18 +60,16 @@ class CandidateController extends Controller
                 return Redirect::back()->with('message', 'Voter Added !');
             }
             //this is the way to insert values to many to many relation in(table candidate_election)
+            $ex_can->name=$input['name'];
+            $ex_can->description=$input['description'];
+            $ex_can->image_path=$file->getClientOriginalName();
+            $ex_can->save();
             Election::find($input['election_id'])->candidates()->attach($ex_can['id']);
             flash()->info('This Candidate has successfully added to election');
             return Redirect::back();
         }
 
 
-        if (Input::hasFile('image_path')) {
-            $file = Input::file('image_path');
-            $file->move('uploads', $file->getClientOriginalName());
-
-
-        }
 
 
         //ading the newly created candidate to candidate table as wel as to candidate_election table
@@ -93,20 +99,19 @@ class CandidateController extends Controller
  * cannot delete a candidate if he has assigned for more than one election
  * if candidate is in only one election then delete from candidate table
  * */
-    public function delete(Requests\createVoterDeleteRequest $request,$id){
-        $voter = Voter::findOrFail($id);
+    public function delete(Requests\createCandidateDeleteRequest $request,$id){
+        $candidate = Candidate::findOrFail($id);
 
-        $no_of_elections=$voter->elections()->count();
+        $no_of_elections=$candidate->elections()->count();
         if($no_of_elections==1){
-            $user=User::where('id',$voter['user_id'])->first();
-            $user->destroy($user->id);
+            $candidate->destroy($candidate->id);
         }
         else{
 
-            $voter->elections()->detach($request->election_id);
+            $candidate->elections()->detach($request->election_id);
         }
 
-        flash()->success('successfully deleted the voter');
+        flash()->success('successfully deleted the candidate');
         return Redirect::back();
     }
 

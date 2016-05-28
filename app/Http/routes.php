@@ -55,6 +55,7 @@ Route::delete('voters/{id}/delete', 'VoterController@delete');
 Route::get('candidates/{id}/create', 'CandidateController@create');
 Route::get('candidate/{id}/show', 'CandidateController@show');
 Route::post('candidates', 'CandidateController@store');
+Route::delete('candidates/{id}/delete', 'CandidateController@delete');
 
 
 
