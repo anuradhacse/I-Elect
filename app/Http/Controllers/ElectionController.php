@@ -147,24 +147,51 @@ class ElectionController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function finalize($id){
+        $errors=false;
         $election = Election::findOrFail($id);
         $voter_count=$election->voters()->count();
         $candidate_count=$election->candidates()->count();
         if($voter_count==0){
            Session::flash('voter_error','Please Add Voters');
+            $errors=true;
 
         }
         if($candidate_count==0){
             Session::flash('candidate_error','Please Add Candidates');
+            $errors=true;
         }
 
-        if($election->start_date<=Carbon::today('Asia/Colombo')){
+        if($election->start_date<Carbon::today('Asia/Colombo')){
             Session::flash('start_date_error','Please Select a Future Date as start date');
+            $errors=true;
+
+        }
+        if($election->start_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
+
+            if($election->start_time<=Carbon::now('Asia/Colombo')->toTimeString()){
+                Session::flash('start_time_error','Please Select a Future time as start time');
+                $errors=true;
+            }
+
 
         }
         if($election->end_date<Carbon::today('Asia/Colombo')){
             Session::flash('end_date_error','Please Select a Future Date as End date');
+            $errors=true;
 
+        }
+        if($election->end_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
+
+            if($election->end_time<=Carbon::now('Asia/Colombo')->toTimeString()){
+                Session::flash('end_time_error','Please Select a Future time as end time');
+                $errors=true;
+            }
+
+
+        }
+
+        if(!$errors){
+            flash()->info('Your Election is Successfully Finalized.Send Emails to Voters using email Blast');
         }
         return view('elections.finalize', compact('election'));
     }

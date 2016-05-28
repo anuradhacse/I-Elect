@@ -51,7 +51,6 @@
                         <tr>
                             <th>Voter name</th>
                             <th>Email</th>
-                            <th>Valid Email</th>
                             <th>Voted</th>
                             <th>Password</th>
                             <th>Action</th>
@@ -62,7 +61,6 @@
                         <tr>
                             <th>Voter name</th>
                             <th>Email</th>
-                            <th>Valid Email</th>
                             <th>Voted</th>
                             <th>Password</th>
                             <th>Action</th>
@@ -74,11 +72,14 @@
                         @foreach($voters as $voter)
                             <tr>
                                 <td>{{$voter->name}}</td>
+                                <td>{{$voter->email}}</td>
                                 <td>{{$voter->name}}</td>
                                 <td>{{$voter->name}}</td>
-                                <td>{{$voter->name}}</td>
-                                <td>{{$voter->name}}</td>
-                                <td>{{$voter->name}}</td>
+                                <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id,$id]])  !!}
+
+                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                                    {!! Form::close() !!}</td>
+
 
                             </tr>
 

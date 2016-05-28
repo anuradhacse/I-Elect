@@ -47,6 +47,7 @@ Route::delete('elections/{id}/delete', 'ElectionController@delete');
 Route::get('voters/{id}/create', 'VoterController@create');
 Route::post('voters', 'VoterController@store');
 Route::post('voters/vote', 'VoterController@vote');
+Route::delete('voters/{id}/delete', 'VoterController@delete');
 
 //candidate routes
 

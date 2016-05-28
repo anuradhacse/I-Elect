@@ -62,9 +62,14 @@
                         <td>Start time</td>
                         <td>{{$election->start_time}}
                         </td>
-                        <td class="alert-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            Valid</td>
+                        @if (Session::has('start_time_error'))
+                            <td class="alert-danger">{{ Session::get('start_time_error') }}&nbsp;&nbsp;  <a href="{{action('ElectionController@edit',$election->id)}}"><button class="btn btn-danger btn-mini">FIX ERROR</button></a></td>
+
+                        @else
+                            <td class="alert-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Valid</td>
+                        @endif
                     </tr>
                     <tr>
                         <td>End date</td>
@@ -86,9 +91,14 @@
                         <td>End time</td>
                         <td>{{$election->end_time}}
                         </td>
-                        <td class="alert-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            Valid</td>
+                        @if (Session::has('end_time_error'))
+                            <td class="alert-danger">{{ Session::get('end_time_error') }}&nbsp;&nbsp;  <a href="{{action('ElectionController@edit',$election->id)}}"><button class="btn btn-danger btn-mini">FIX ERROR</button></a></td>
+
+                        @else
+                            <td class="alert-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Valid</td>
+                        @endif
                     </tr>
                     <tr>
                         <td>No.of Voters</td>

@@ -167,7 +167,7 @@ class VoterController extends Controller
         $c = Election::find($election_id)->voters()->findOrFail($voter['id'])->pivot->candidate_id;
 
 
-        //filing candidate_id co;umn in the pivot table election_voter
+        //filling candidate_id column in the pivot table election_voter
         if ($c == null) {
             Election::find($election_id)->voters()->sync([$voter['id'] => ['candidate_id' => $candidate_id]], false);
             flash()->info('successfully added your vote');
@@ -177,5 +177,29 @@ class VoterController extends Controller
         }
         return Redirect('/voterhome');
 
+    }
+
+    /**
+     * @param $id
+     * @return Redirect
+     * cannot delete a voter if he has assigned for more than one election
+     * if voter is in only one election then delete from user table
+     * more than one then delete only the election reference in election voter table
+     */
+    public function delete($id){
+        $voter = Voter::findOrFail($id);
+
+        $no_of_elections=$voter->elections()->count();
+        if($no_of_elections==1){
+            $user=User::where('id',$voter['user_id'])->first();
+            $user->destroy($user->id);
+        }
+        else{
+
+            $voter->elections()->detach();
+        }
+
+        flash()->success('successfully deleted the voter');
+        return Redirect::back();
     }
 }

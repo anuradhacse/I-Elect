@@ -12,6 +12,11 @@ class Election extends Model
 
     protected $dates = ['start_date', 'end_date'];
 
+    public function getDates()
+    {
+        return ['created_at', 'updated_at', 'start_date','end_date'];
+    }
+
     /**
      * an election belong to specific admin
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
