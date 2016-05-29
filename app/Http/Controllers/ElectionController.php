@@ -202,8 +202,10 @@ class ElectionController extends Controller
      */
     public function results($id){
             $election=Election::findOrFail($id);
+            $candidates=$election->candidates();
+            $voters=$election->voters();
 
-            return view('elections.result',compact('election'));
+            return view('elections.result',compact('election','candidates','voters'));
 
 
     }
