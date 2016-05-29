@@ -72,9 +72,13 @@
                                 <td>{{$voter->name}}</td>
                                 <td>{{\App\User::where('id',$voter->user_id)->first()->email}}</td>
                                 @if($election->voters()->findOrFail($voter['id'])->pivot->candidate_id==null)
-                                    <td>Not voted</td>
+                                    <td class="alert-danger"><span class="glyphicon glyphicon-alert-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Error:</span>
+                                        Not Voted</td>
                                     @else
-                                    <td> Voted</td>
+                                     <td class="alert-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Error:</span>
+                                        Voted</td>
                                     @endif
                                 <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id]])  !!}
                                     {!! Form::hidden('election_id',$id) !!}

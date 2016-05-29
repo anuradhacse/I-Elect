@@ -148,6 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        Helfull\CanvasJS\Laravel\Provider\CanvasJSServiceProvider::class,
+
 
 
         /*
@@ -207,6 +209,7 @@ return [
         'Form' =>Illuminate\Html\FormFacade::class,
         'Html' =>Illuminate\Html\HtmlFacade::class,
         'Flash'=>Laracasts\Flash\Flash::class,
+        'HTML'=> Illuminate\Html\HtmlFacade::class,
 
     ],
 

@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "illuminate/html": "^5.0",
         "guzzlehttp/guzzle": "~4.0",
-        "laracasts/flash": "^2.0"
+        "laracasts/flash": "^2.0",
+        "helfull/canvasjs": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

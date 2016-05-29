@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Session;
 use Request;
 use Carbon\Carbon;
 
+use Helfull\CanvasJS\Chart;
+use Helfull\CanvasJS\Chart\ChartData;
+use Helfull\CanvasJS\Chart\DataPoint;
+
 use App\Http\Requests;
 
 
@@ -201,11 +205,36 @@ class ElectionController extends Controller
      * @param $id
      */
     public function results($id){
+
+
+
+        $chart = new Chart([
+            "theme"=> "theme2",
+            "title"=>[
+                "text"=> "Basic Column Chart - CanvasJS"
+            ],
+            "animationEnabled"=> false,   // change to true
+            "data"=> [
+                [
+                    // Change type to "bar", "splineArea", "area", "spline", "pie",etc.
+                    "type"=> "column",
+                    "dataPoints"=> [
+                        [ "label"=> "apple",  "y"=> 10  ],
+                        [ "label"=> "orange", "y"=> 15  ],
+                        [ "label"=> "banana", "y"=> 25  ],
+                        [ "label"=> "mango",  "y"=> 30  ],
+                        [ "label"=> "grape",  "y"=> 28  ]
+                    ]
+
+    ]]]);
+
             $election=Election::findOrFail($id);
             $candidates=$election->candidates();
-            $voters=$election->voters();
 
-            return view('elections.result',compact('election','candidates','voters'));
+        $voters=$election->voters();
+
+
+            return view('elections.result',compact('election','candidates','voters','chart'));
 
 
     }
