@@ -59,24 +59,6 @@ class Election extends Model
         $format_time = Carbon::parse($time)->toTimeString();
         return $this->attributes['end_time'] = Carbon::createFromFormat('H:i:s', $format_time);
     }
-    public function getStartDateAttribute($date)
-    {
-        dd('in');
-        if (is_null($date))
-        {
-            return Carbon::createFromDate($date); // if you are going to return null here, do not use the accessor at all
-        }
 
-        return $this->asDateTime( $date );
-    }
-    public function getEndDateAttribute($date)
-    {
-        if (is_null($date))
-        {
-            return Carbon::createFromDate($date); // if you are going to return null here, do not use the accessor at all
-        }
-
-        return $this->asDateTime( $date );
-    }
 
 }

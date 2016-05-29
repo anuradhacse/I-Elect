@@ -149,6 +149,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Helfull\CanvasJS\Laravel\Provider\CanvasJSServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
+
+
 
 
 

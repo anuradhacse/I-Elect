@@ -72,7 +72,7 @@
                                 <td>{{$voter->name}}</td>
                                 <td>{{\App\User::where('id',$voter->user_id)->first()->email}}</td>
                                 @if($election->voters()->findOrFail($voter['id'])->pivot->candidate_id==null)
-                                    <td class="alert-danger"><span class="glyphicon glyphicon-alert-sign" aria-hidden="true"></span>
+                                    <td class="alert-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
                                         <span class="sr-only">Error:</span>
                                         Not Voted</td>
                                     @else
