@@ -17,7 +17,9 @@
             <div class="panel-body">
                 <h1>Final Results of Election</h1>
                 <hr>
-        {!! $chart->render() !!}
+                <div id="chart-div"></div>
+                {!! $lava->render('ColumnChart', 'vote', 'chart-div') !!}
+
 
             </div>
 

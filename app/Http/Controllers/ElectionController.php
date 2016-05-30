@@ -7,6 +7,7 @@ use App\Election;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Khill\Lavacharts\Lavacharts;
 use Request;
 use Carbon\Carbon;
 
@@ -35,7 +36,7 @@ class ElectionController extends Controller
 //can get null pointer exception if $admin is null
 
         $elections1 = $admin[0]->elections;
-        $elections=$elections1->sortBy('created_at');
+        $elections = $elections1->sortBy('created_at');
 
         return view('admin.adminhome', compact('elections'));
     }
@@ -48,12 +49,11 @@ class ElectionController extends Controller
     public function store(Requests\createElectionRequest $request)
     {
         $input = $request->all();
-        if($input['end_date']<$input['start_date']){
+        if ($input['end_date'] < $input['start_date']) {
             flash()->error('Election end date should be a date after start date');
             return Redirect::back();
-        }
-        else if($input['end_date']==$input['start_date']){
-            if($input['end_time']<=$input['start_time']){
+        } else if ($input['end_date'] == $input['start_date']) {
+            if ($input['end_time'] <= $input['start_time']) {
                 flash()->error('Election end time should be a time after start time');
                 return Redirect::back();
             }
@@ -76,27 +76,21 @@ class ElectionController extends Controller
 
     public function vote($id)
     {
-        $election=Election::find($id);
+        $election = Election::find($id);
         $candidates = Election::find($id)->candidates()->get();
 
-        if($election->end_date<\Carbon\Carbon::today('Asia/Colombo')){
+        if ($election->end_date < \Carbon\Carbon::today('Asia/Colombo')) {
             flash()->error('this election is over');
             return Redirect::back();
-        }
+        } elseif ($election->end_date === \Carbon\Carbon::today('Asia/Colombo')) {
 
-         elseif($election->end_date===\Carbon\Carbon::today('Asia/Colombo')){
-
-             if($election->end_time<=\Carbon\Carbon::now('Asia/Colombo')){
-                 flash()->error('this election is over');
-                 return Redirect::back();
-             }
-         }
-
-        else{
+            if ($election->end_time <= \Carbon\Carbon::now('Asia/Colombo')) {
+                flash()->error('this election is over');
+                return Redirect::back();
+            }
+        } else {
             return view('voter.vote', compact('candidates', 'id'));
         }
-
-
 
 
     }
@@ -109,13 +103,12 @@ class ElectionController extends Controller
 
     public function update($id, Requests\createElectionRequest $request)
     {
-        $input=$request->all();
-        if($input['end_date']<$input['start_date']){
+        $input = $request->all();
+        if ($input['end_date'] < $input['start_date']) {
             flash()->error('Election end date should be a date after start date');
             return Redirect::back();
-        }
-        else if($input['end_date']==$input['start_date']){
-            if($input['end_time']<=$input['start_time']){
+        } else if ($input['end_date'] == $input['start_date']) {
+            if ($input['end_time'] <= $input['start_time']) {
                 flash()->error('Election end time should be a time after start time');
                 return Redirect::back();
             }
@@ -150,51 +143,52 @@ class ElectionController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function finalize($id){
-        $errors=false;
+    public function finalize($id)
+    {
+        $errors = false;
         $election = Election::findOrFail($id);
-        $voter_count=$election->voters()->count();
-        $candidate_count=$election->candidates()->count();
-        if($voter_count==0){
-           Session::flash('voter_error','Please Add Voters');
-            $errors=true;
+        $voter_count = $election->voters()->count();
+        $candidate_count = $election->candidates()->count();
+        if ($voter_count == 0) {
+            Session::flash('voter_error', 'Please Add Voters');
+            $errors = true;
 
         }
-        if($candidate_count==0){
-            Session::flash('candidate_error','Please Add Candidates');
-            $errors=true;
+        if ($candidate_count == 0) {
+            Session::flash('candidate_error', 'Please Add Candidates');
+            $errors = true;
         }
 
-        if($election->start_date<Carbon::today('Asia/Colombo')){
-            Session::flash('start_date_error','Please Select a Future Date as start date');
-            $errors=true;
+        if ($election->start_date < Carbon::today('Asia/Colombo')) {
+            Session::flash('start_date_error', 'Please Select a Future Date as start date');
+            $errors = true;
 
         }
-        if($election->start_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
+        if ($election->start_date->toDateString() == Carbon::today('Asia/Colombo')->toDateString()) {
 
-            if($election->start_time<=Carbon::now('Asia/Colombo')->toTimeString()){
-                Session::flash('start_time_error','Please Select a Future time as start time');
-                $errors=true;
+            if ($election->start_time <= Carbon::now('Asia/Colombo')->toTimeString()) {
+                Session::flash('start_time_error', 'Please Select a Future time as start time');
+                $errors = true;
             }
 
 
         }
-        if($election->end_date<Carbon::today('Asia/Colombo')){
-            Session::flash('end_date_error','Please Select a Future Date as End date');
-            $errors=true;
+        if ($election->end_date < Carbon::today('Asia/Colombo')) {
+            Session::flash('end_date_error', 'Please Select a Future Date as End date');
+            $errors = true;
 
         }
-        if($election->end_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
+        if ($election->end_date->toDateString() == Carbon::today('Asia/Colombo')->toDateString()) {
 
-            if($election->end_time<=Carbon::now('Asia/Colombo')->toTimeString()){
-                Session::flash('end_time_error','Please Select a Future time as end time');
-                $errors=true;
+            if ($election->end_time <= Carbon::now('Asia/Colombo')->toTimeString()) {
+                Session::flash('end_time_error', 'Please Select a Future time as end time');
+                $errors = true;
             }
 
 
         }
 
-        if(!$errors){
+        if (!$errors) {
             flash()->info('Your Election is Successfully Finalized.Send Emails to Voters using email Blast');
         }
         return view('elections.finalize', compact('election'));
@@ -204,38 +198,86 @@ class ElectionController extends Controller
      * showing results to users complete statistics with graphical charts
      * @param $id
      */
-    public function results($id){
+    public function results($id)
+    {
+        $election = Election::findOrFail($id);
+        $candidates = $election->candidates;
+
+
+        $voters = $election->voters();
+        $lava = new Lavacharts();
+
+        $reasons = $lava->DataTable();
+        
+
+            $reasons->addStringColumn('Name')
+                    ->addNumberColumn('votes');
+
+
+        foreach ($candidates as $candidate) {
+                    $reasons->addRow(array($candidate->name,$election->voters()->wherePivot('candidate_id','=',$candidate->id)->count()));
+//
+        }
+//
+//        $reasons->addStringColumn('Reasons')
+//            ->addNumberColumn('Percent');
+////
+//        foreach($candidates as  $candidate){
+//            $reasons->addRow(array($candidate->name,$election->voters()->wherePivot('candidate_id','=',$candidate->id)->count()));
+//        }
+//        $donutchart = $lava->DonutChart('IMDB', $reasons, [
+//            'title' => 'Votes Taken by each candidate for Election '.$election->name,
+//            'Animation'=>'true',
+//            'fontSize'          => "16px",
+//
+//        ]);
+//
+//        $column_chart=$lava->ColumnChart('vote', $reasons, [
+//            'axisTitlesPosition' => 'centre',
+//            'barGroupWidth'      => "33%",  //As a percent, "33%"
+//     'hAxis'              => "Candidate names",        //HorizontalAxis Options
+//    'isStacked'          => false,
+//
+//    'vAxis'              => "No of votes taken"        //VerticalAxis Options
+//]);
+        $lava->ColumnChart('vote', $reasons, [
+            'title' => 'Company Performance',
+            'titleTextStyle' => [
+                'color'    => '#eb6b2c',
+                'fontSize' => 14
+            ]
+        ]);
 
 
 
-        $chart = new Chart([
-            "theme"=> "theme2",
-            "title"=>[
-                "text"=> "Basic Column Chart - CanvasJS"
-            ],
-            "animationEnabled"=> false,   // change to true
-            "data"=> [
-                [
-                    // Change type to "bar", "splineArea", "area", "spline", "pie",etc.
-                    "type"=> "column",
-                    "dataPoints"=> [
-                        [ "label"=> "apple",  "y"=> 10  ],
-                        [ "label"=> "orange", "y"=> 15  ],
-                        [ "label"=> "banana", "y"=> 25  ],
-                        [ "label"=> "mango",  "y"=> 30  ],
-                        [ "label"=> "grape",  "y"=> 28  ]
-                    ]
-
-    ]]]);
-
-            $election=Election::findOrFail($id);
-            $candidates=$election->candidates();
-
-        $voters=$election->voters();
-
-
-            return view('elections.result',compact('election','candidates','voters','chart'));
+        return view('elections.result', compact('election', 'candidates', 'voters', 'lava'));
 
 
     }
+    public function getColumnChart(){
+        $lava = new Lavacharts; // See note below for Laravel
+
+        $finances = $lava->DataTable();
+
+        $finances->addDateColumn('Year')
+            ->addNumberColumn('Ford')
+            ->addNumberColumn('Kia')
+            ->addNumberColumn('Toyota')
+            ->setDateTimeFormat('Y')
+            ->addRow(['2004', 5, 0, 3])
+            ->addRow(['2005', 2, 4, 4])
+            ->addRow(['2006', 8, 2, 0])
+            ->addRow(['2007', 0, 5, 4]);
+        
+      
+        $lava->ColumnChart('Finances', $finances, [
+            'title' => 'Company Performance',
+            'titleTextStyle' => [
+                'color'    => '#eb6b2c',
+                'fontSize' => 14
+            ]
+        ]);
+    }
+
+
 }
