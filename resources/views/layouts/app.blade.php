@@ -25,7 +25,7 @@
     <style>
         body {
             font-family: 'Lato';
-            background: url("img/bg.jpg");
+            background: {{asset(url("img/bg.jpg"))}};
             -webkit-background-size: cover;
             background-size: cover;
 

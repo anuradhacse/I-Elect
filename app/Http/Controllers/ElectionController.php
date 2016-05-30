@@ -206,46 +206,55 @@ class ElectionController extends Controller
 
         $voters = $election->voters();
         $lava = new Lavacharts();
-
+        //column chart
         $reasons = $lava->DataTable();
-        
-
-            $reasons->addStringColumn('Name')
+        $reasons->addStringColumn('Name')
                     ->addNumberColumn('votes');
-
 
         foreach ($candidates as $candidate) {
                     $reasons->addRow(array($candidate->name,$election->voters()->wherePivot('candidate_id','=',$candidate->id)->count()));
-//
+
         }
-//
-//        $reasons->addStringColumn('Reasons')
-//            ->addNumberColumn('Percent');
-////
-//        foreach($candidates as  $candidate){
-//            $reasons->addRow(array($candidate->name,$election->voters()->wherePivot('candidate_id','=',$candidate->id)->count()));
-//        }
-//        $donutchart = $lava->DonutChart('IMDB', $reasons, [
-//            'title' => 'Votes Taken by each candidate for Election '.$election->name,
-//            'Animation'=>'true',
-//            'fontSize'          => "16px",
-//
-//        ]);
-//
-//        $column_chart=$lava->ColumnChart('vote', $reasons, [
-//            'axisTitlesPosition' => 'centre',
-//            'barGroupWidth'      => "33%",  //As a percent, "33%"
-//     'hAxis'              => "Candidate names",        //HorizontalAxis Options
-//    'isStacked'          => false,
-//
-//    'vAxis'              => "No of votes taken"        //VerticalAxis Options
-//]);
-        $lava->ColumnChart('vote', $reasons, [
-            'title' => 'Company Performance',
+
+        //donought chart
+        $reasons1= $lava->DataTable();
+        $reasons1->addStringColumn('name')
+            ->addNumberColumn('votes');
+
+
+        foreach($candidates as  $candidate){
+            $reasons1->addRow(array($candidate->name,$election->voters()->wherePivot('candidate_id','=',$candidate->id)->count()));
+        }
+        $donutchart = $lava->DonutChart('IMDB', $reasons1, [
+            'title' => 'Votes Taken by each candidate as a percentage(%) ',
+            'Animation'=>'true',
+            'titlePosition'     => 'centre',
             'titleTextStyle' => [
-                'color'    => '#eb6b2c',
-                'fontSize' => 14
-            ]
+                'color'    => '#81B0D1',
+                'fontSize' => 18,
+                'font'=>'"Palatino Linotype", "Book Antiqua", Palatino, serif',
+
+            ],
+            'width'=>"100%",
+            'height'=>"100%",
+            'pieHole' => 0.4,
+
+
+
+        ]);
+//
+
+        $lava->ColumnChart('vote', $reasons, [
+            'title' => 'Number of Votes of Each candidate in Election - '.$election->name,
+            'titleTextStyle' => [
+                'color'    => '#81B0D1',
+                'fontSize' =>18,
+                'font'=>'"Palatino Linotype", "Book Antiqua", Palatino, serif',
+            ],
+            'role'=>'style',
+            'colors'=>['#CF81D1'],
+
+
         ]);
 
 
