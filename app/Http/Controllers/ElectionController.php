@@ -63,7 +63,7 @@ class ElectionController extends Controller
         $user_id = Auth::user()->id;
         $admin = Admin::where('user_id', $user_id)->first();
         //getting the admin object and creating an object.here it will automatically update admin_id (foriegn key)
-        $admin->elections()->create($input);
+        $election=$admin->elections()->create($input);
         return redirect('elections');
     }
 
@@ -190,6 +190,8 @@ class ElectionController extends Controller
 
         if (!$errors) {
             flash()->info('Your Election is Successfully Finalized.Send Emails to Voters using email Blast');
+            $election['finalize']=true;
+            $election->save();
         }
         return view('elections.finalize', compact('election'));
     }

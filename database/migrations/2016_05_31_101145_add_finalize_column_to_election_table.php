@@ -12,8 +12,8 @@ class AddFinalizeColumnToElectionTable extends Migration
      */
     public function up()
     {
-        Schema::table('election', function (Blueprint $table) {
-            //
+        Schema::table('elections', function (Blueprint $table) {
+            $table->boolean('finalize');
         });
     }
 
@@ -24,7 +24,7 @@ class AddFinalizeColumnToElectionTable extends Migration
      */
     public function down()
     {
-        Schema::table('election', function (Blueprint $table) {
+        Schema::table('elections', function (Blueprint $table) {
             //
         });
     }
