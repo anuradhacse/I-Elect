@@ -57,16 +57,18 @@
                             <td>{{$election->candidates->count()}}</td>
                             <td>{{$election->voters->count()}}</td>
                             <td>{{$election->voters()->whereNotNull('election_voter.candidate_id')->count()}}</td>
-                            @if($election->end_date<\Carbon\Carbon::today('Asia/Colombo'))
-                                <td>finished </td>
+                            @if($election->end_date<\Carbon\Carbon::today('Asia/Colombo')&& $election->finalize)
+                                <td>Finished </td>
                             @elseif($election->end_date->toDateString()==\Carbon\Carbon::today('Asia/Colombo')->toDateString())
 
-                                @if($election->end_time <=\Carbon\Carbon::now('Asia/Colombo')->toTimeString())
+                                @if($election->end_time <=\Carbon\Carbon::now('Asia/Colombo')->toTimeString()&& $election->finalize)
                                     <td>Finished </td>
                                     @else
                                     <td>Draft</td>
                                     @endif
 
+                            @elseif($election->finalize)
+                             <td>Finalized</td>
                             @else
                             <td>Draft</td>
                             @endif

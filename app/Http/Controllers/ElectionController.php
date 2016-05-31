@@ -117,7 +117,7 @@ class ElectionController extends Controller
         $election = Election::findOrFail($id);
         $election->update($request->all());
         flash()->success('successfully updated the information');
-        return redirect('elections');
+        return redirect('elections/'.$election->id.'/show');
     }
 
     /**
