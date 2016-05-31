@@ -23,7 +23,7 @@
                 {!! $lava->render('ColumnChart', 'vote', 'chart-div') !!}
                 {!! $lava->render('DonutChart', 'IMDB', 'chart-div2') !!}
 
-               
+
             </div>
 
 
