@@ -24,6 +24,7 @@ class ElectionController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('finalize',['only'=>'edit']);
     }
 
     public function index()
@@ -147,6 +148,10 @@ class ElectionController extends Controller
     {
         $errors = false;
         $election = Election::findOrFail($id);
+        if($election->finalize){
+            flash()->warning("This Election already finalized");
+            return Redirect::back();
+        }
         $voter_count = $election->voters()->count();
         $candidate_count = $election->candidates()->count();
         if ($voter_count == 0) {
@@ -265,30 +270,7 @@ class ElectionController extends Controller
 
 
     }
-    public function getColumnChart(){
-        $lava = new Lavacharts; // See note below for Laravel
 
-        $finances = $lava->DataTable();
-
-        $finances->addDateColumn('Year')
-            ->addNumberColumn('Ford')
-            ->addNumberColumn('Kia')
-            ->addNumberColumn('Toyota')
-            ->setDateTimeFormat('Y')
-            ->addRow(['2004', 5, 0, 3])
-            ->addRow(['2005', 2, 4, 4])
-            ->addRow(['2006', 8, 2, 0])
-            ->addRow(['2007', 0, 5, 4]);
-        
-      
-        $lava->ColumnChart('Finances', $finances, [
-            'title' => 'Company Performance',
-            'titleTextStyle' => [
-                'color'    => '#eb6b2c',
-                'fontSize' => 14
-            ]
-        ]);
-    }
 
 
 }
