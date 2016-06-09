@@ -24,7 +24,7 @@ class ElectionController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('finalize',['only'=>'edit']);
+        $this->middleware('finalize',['only'=>['edit','finalize']]);
     }
 
     public function index()
@@ -80,18 +80,59 @@ class ElectionController extends Controller
         $election = Election::find($id);
         $candidates = Election::find($id)->candidates()->get();
 
-        if ($election->end_date < \Carbon\Carbon::today('Asia/Colombo')) {
-            flash()->error('this election is over');
+        if($election->end_date<Carbon::today('Asia/Colombo')){
+            flash()->error('This Election is Finished.You cannot vote now');
             return Redirect::back();
-        } elseif ($election->end_date === \Carbon\Carbon::today('Asia/Colombo')) {
+        }
+        else if($election->end_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
 
-            if ($election->end_time <= \Carbon\Carbon::now('Asia/Colombo')) {
-                flash()->error('this election is over');
+            if($election->end_time<=Carbon::now('Asia/Colombo')->toTimeString()){
+                flash()->error('This Election is Finished.You cannot vote now');
                 return Redirect::back();
             }
-        } else {
+            elseif($election->start_time<=Carbon::now('Asia/Colombo')->toTimeString()){
+                if(!$election->finalize){
+                    flash()->error('This election is not finalized.sorry you cant vote until itz finalized');
+                    return Redirect::back();
+                }
+                return view('voter.vote', compact('candidates', 'id'));
+            }
+            else{
+                flash()->error('This Election is not started yet');
+                return Redirect::back();
+
+            }
+
+        }
+        //ongoing elections
+        elseif($election->start_date<Carbon::today('Asia/Colombo') && $election->end_date>=Carbon::today('Asia/Colombo')){
+            if(!$election->finalize){
+                flash()->error('This election is not finalized.sorry you cant vote until it is finalized');
+                return Redirect::back();
+            }
             return view('voter.vote', compact('candidates', 'id'));
         }
+        elseif($election->start_date->toDateString()==Carbon::today('Asia/Colombo')->toDateString()){
+            if($election->start_time<=Carbon::now('Asia/Colombo')->toTimeString()){
+                if(!$election->finalize){
+                    flash()->error('This election is not finalized.sorry you cant vote until itz finalized');
+                    return Redirect::back();
+                }
+                return view('voter.vote', compact('candidates', 'id'));
+            }
+            else{
+                flash()->error('This Election is not started yet');
+                return Redirect::back();
+            }
+
+
+        }
+        else{
+            flash()->warning('This Election is not started yet');
+            return Redirect::back();
+
+        }
+
 
 
     }
@@ -148,10 +189,6 @@ class ElectionController extends Controller
     {
         $errors = false;
         $election = Election::findOrFail($id);
-        if($election->finalize){
-            flash()->warning("This Election already finalized");
-            return Redirect::back();
-        }
         $voter_count = $election->voters()->count();
         $candidate_count = $election->candidates()->count();
         if ($voter_count == 0) {

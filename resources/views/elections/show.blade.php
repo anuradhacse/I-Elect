@@ -38,37 +38,36 @@
 
                         <tr>
                             <td>Election name</td>
-                            <td>{{$election->name}}
+                            <td><a href="{{action('ElectionController@edit',$election->id)}}">{{$election->name}}</a>
                             </td>
 
                         </tr>
                         <tr>
                             <td>Start date</td>
-                            <td>{{$election->start_date->toDateString()}}
-
+                            <td><a href="{{action('ElectionController@edit',$election->id)}}">{{$election->start_date->toDateString()}}</a></td>
 
                         </tr>
                         <tr>
                             <td>Start time</td>
-                            <td>{{$election->start_time}}
+                            <td><a href="{{action('ElectionController@edit',$election->id)}}">{{$election->start_time}}</a>
                             </td>
 
                         </tr>
                         <tr>
                             <td>End date</td>
-                            <td>{{$election->end_date->toDateString()}}
+                            <td><a href="{{action('ElectionController@edit',$election->id)}}">{{$election->end_date->toDateString()}}</a>
                           </td>
 
                         </tr>
                         <tr>
                             <td>End time</td>
-                            <td>{{$election->end_time}}
+                            <td><a href="{{action('ElectionController@edit',$election->id)}}">{{$election->end_time}}</a>
                             </td>
 
                         </tr>
                         <tr>
                             <td>No.of Voters</td>
-                            <td>{{$election->voters->count()}}
+                            <td><a href="{{action('VoterController@create',$election->id)}}">{{$election->voters->count()}}</a>
                             </td>
 
 
@@ -76,7 +75,7 @@
 
                         <tr>
                             <td>No.of Candidates</td>
-                            <td>{{$election->candidates->count()}}</td>
+                            <td><a href="{{action('CandidateController@create',$election->id)}}">{{$election->candidates->count()}}</a></td>
 
 
                         </tr>

@@ -79,8 +79,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                <h2>One and only srilankan online voting system!</h2>
+                <p class="lead">Free accounts.Hurry up and enjoy internet voting <a target="_blank" href={{url('/register')}}>Register here</a>.</p>
             </div>
         </div>
         <!-- /.row -->
@@ -177,28 +177,28 @@
                     <div class="col-md-6">
                         <div class="portfolio-item">
                             <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                <img class="img-portfolio img-responsive" src={{asset(url('img/portfolio-1.jpg'))}}>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="portfolio-item">
                             <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                <img class="img-portfolio img-responsive" src={{asset(url('img/portfolio-2.jpg'))}}>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="portfolio-item">
                             <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                <img class="img-portfolio img-responsive" src={{asset(url('img/portfolio-3.jpg'))}}>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="portfolio-item">
                             <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                <img class="img-portfolio img-responsive" src={{asset(url('img/portfolio-4.jpg'))}}>
                             </a>
                         </div>
                     </div>
@@ -228,12 +228,11 @@
 
 <!-- Map -->
 <section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7776754640827!2d79.89958941449487!3d6.796882321811127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae245416b7f34b5%3A0x7bd32721ab02560e!2sUniversity+of+Moratuwa!5e0!3m2!1sen!2slk!4v1464804242733" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>   <br />
+    <large>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-    </iframe>
+    </large>
+
 </section>
 
 <!-- Footer -->
@@ -241,12 +240,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h4><strong>Start Bootstrap</strong>
+                <h4><strong>Anuradha Niroshan</strong>
                 </h4>
-                <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                <p>University of moratuwa<br>Computer Science and Engineering</p>
                 <ul class="list-unstyled">
-                    <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                    <li><i class="fa fa-phone fa-fw"></i> (+94) 71 606 618 4</li>
+                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:anirosh.13@cse.mrt.ac.lk">anirosh.13@cse.mrt.ac.lk</a>
                     </li>
                 </ul>
                 <br>
@@ -262,17 +261,17 @@
                     </li>
                 </ul>
                 <hr class="small">
-                <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                <p class="text-muted">Copyright &copy; i-Elect Website 2016</p>
             </div>
         </div>
     </div>
 </footer>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!-- Custom Theme JavaScript -->
 <script>
