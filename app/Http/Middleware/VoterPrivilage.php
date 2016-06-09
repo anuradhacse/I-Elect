@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class VoterPrivilage
 {
@@ -14,7 +16,11 @@ class VoterPrivilage
      * @return mixed
      */
     public function handle($request, Closure $next)
+
     {
+        if(Auth::user()->role=='1'){
+            return Redirect::back();
+        }
         return $next($request);
     }
 }

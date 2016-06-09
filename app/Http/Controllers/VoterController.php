@@ -20,6 +20,7 @@ class VoterController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('finalize',['only'=>['create']]);
+        
     }
 
     public function index()

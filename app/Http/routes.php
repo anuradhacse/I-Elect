@@ -29,7 +29,7 @@ Route::get('/home', function () {
 Route::auth();
 
 Route::get('/adminhome', 'HomeController@adminHome')->middleware('admin_privilage');
-Route::get('/voterhome', 'VoterController@voterHome');
+Route::get('/voterhome', 'VoterController@voterHome')->middleware('voter_privilage');;
 
 //creating routes for elections-->show,edit,update and delete
 
@@ -37,7 +37,7 @@ Route::get('elections', 'ElectionController@index');
 Route::get('elections/create', 'ElectionController@create');
 Route::post('elections', 'ElectionController@store');
 Route::get('elections/{id}/show', 'ElectionController@show');
-Route::get('elections/{id}/vote', 'ElectionController@vote');
+Route::get('elections/{id}/vote', 'ElectionController@vote')->middleware('voter_privilage');;
 Route::get('elections/{id}/edit', 'ElectionController@edit');
 Route::get('elections/{id}/finalize', 'ElectionController@finalize');
 Route::get('elections/{id}/results', 'ElectionController@results');

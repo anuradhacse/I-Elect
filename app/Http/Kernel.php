@@ -51,5 +51,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'finalize' => \App\Http\Middleware\Finalize::class,
         'admin_privilage'=>\App\Http\Middleware\AdminPrivilage::class,
+        'voter_privilage'=>\App\Http\Middleware\VoterPrivilage::class,
+
     ];
 }
