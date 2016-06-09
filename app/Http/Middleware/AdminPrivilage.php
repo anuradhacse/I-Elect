@@ -4,7 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Privilage
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+
+class AdminPrivilage
 {
     /**
      * Handle an incoming request.
@@ -15,6 +18,9 @@ class Privilage
      */
     public function handle($request, Closure $next)
     {
+        if(Auth::user()->role=='2'){
+            return Redirect::back();
+        }
         return $next($request);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Kernel;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,7 +28,7 @@ Route::get('/home', function () {
 
 Route::auth();
 
-Route::get('/adminhome', 'HomeController@adminHome');
+Route::get('/adminhome', 'HomeController@adminHome')->middleware('admin_privilage');
 Route::get('/voterhome', 'VoterController@voterHome');
 
 //creating routes for elections-->show,edit,update and delete

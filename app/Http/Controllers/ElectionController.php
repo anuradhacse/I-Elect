@@ -25,6 +25,7 @@ class ElectionController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('finalize',['only'=>['edit','finalize']]);
+        $this->middleware('admin_privilage',['except'=>'vote']);
     }
 
     public function index()
