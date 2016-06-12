@@ -104,10 +104,10 @@
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
                             <h4>
-                                <strong>Service Name</strong>
+                                <strong>Multiple elections at once</strong>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <p>Now you can start any number of elections concurrently.</p>
+                            <a href="{{url('/login')}}" class="btn btn-light">Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -117,10 +117,10 @@
                                 <i class="fa fa-compass fa-stack-1x text-primary"></i>
                             </span>
                             <h4>
-                                <strong>Service Name</strong>
+                                <strong>Email notifications</strong>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <p>you will get an instant email iforming eligible elections.</p>
+                            <a href="{{url('/login')}}" class="btn btn-light">Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -130,10 +130,10 @@
                                 <i class="fa fa-flask fa-stack-1x text-primary"></i>
                             </span>
                             <h4>
-                                <strong>Service Name</strong>
+                                <strong>100% confidentiality</strong>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <p>Every voter can reset password using the link in notification email.</p>
+                            <a href="{{url('/login')}}" class="btn btn-light">Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -143,10 +143,10 @@
                                 <i class="fa fa-shield fa-stack-1x text-primary"></i>
                             </span>
                             <h4>
-                                <strong>Service Name</strong>
+                                <strong>Data Visualization</strong>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <p>Elections results will be shown using 3D bar charts and pie charts.</p>
+                            <a href="{{url('/login')}}" class="btn btn-light">Learn More</a>
                         </div>
                     </div>
                 </div>
