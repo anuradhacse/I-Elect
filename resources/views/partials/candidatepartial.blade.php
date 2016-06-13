@@ -5,7 +5,9 @@
         <th>Email</th>
         <th>Description</th>
         <th>Image</th>
+        @if(!$election->finalize)
         <th>Action</th>
+            @endif
 
     </tr>
     </thead>
@@ -15,7 +17,9 @@
         <th>Email</th>
         <th>Description</th>
         <th>Image</th>
-        <th>Action</th>
+        @if(!$election->finalize)
+            <th>Action</th>
+            @endif
 
     </tr>
     </tfoot>
@@ -27,10 +31,13 @@
             <td>{{$candidate->email}}</td>
             <td>{{$candidate->description}}</td>
             <td><img src="{{asset('uploads/'.$candidate->image_path)}}" style="width: 50px;height: 50px"></td>
-            <td>{!! Form::open(['method'=>'DELETE','action' => ['CandidateController@delete', $candidate->id]])  !!}
-                {!! Form::hidden('election_id',$id) !!}
-                <button type="submit" class="btn btn-danger btn-mini">Delete</button>
-                {!! Form::close() !!}</td></td>
+            @if(!$election->finalize)
+                <td>{!! Form::open(['method'=>'DELETE','action' => ['CandidateController@delete', $candidate->id]])  !!}
+                    {!! Form::hidden('election_id',$id) !!}
+                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                    {!! Form::close() !!}</td></td>
+                @endif
+
 
         </tr>
 
