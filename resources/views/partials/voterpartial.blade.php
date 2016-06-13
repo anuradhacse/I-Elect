@@ -4,7 +4,10 @@
         <th>Voter name</th>
         <th>Email</th>
         <th>Voted</th>
-        <th>Action</th>
+        @if(!$election->finalize)
+            <th>Action</th>
+            @endif
+
 
     </tr>
     </thead>
@@ -13,7 +16,9 @@
         <th>Voter name</th>
         <th>Email</th>
         <th>Voted</th>
-        <th>Action</th>
+        @if(!$election->finalize)
+            <th>Action</th>
+        @endif
 
     </tr>
     </tfoot>
@@ -32,10 +37,13 @@
                     <span class="sr-only">Error:</span>
                     Voted</td>
             @endif
-            <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id]])  !!}
-                {!! Form::hidden('election_id',$id) !!}
-                <button type="submit" class="btn btn-danger btn-mini">Delete</button>
-                {!! Form::close() !!}</td>
+            @if(!$election->finalize)
+                <td>{!! Form::open(['method'=>'DELETE','action' => ['VoterController@delete', $voter->id]])  !!}
+                    {!! Form::hidden('election_id',$id) !!}
+                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                    {!! Form::close() !!}</td>
+            @endif
+
 
 
         </tr>

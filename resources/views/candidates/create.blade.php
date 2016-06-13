@@ -16,10 +16,12 @@
                 @if(!$election->finalize)
                     @include('partials.candidateform')
                     @include('errors.errorlist')
-                    <br>
+
+                    @else
+                    This is Finalized Election.Cannot add Candidates!!
                     @endif
 
-                    This is Finalized Election.Cannot Edit!!
+
                     <hr color="red" />
                     <!-- dispaly CANDIDATES who have already added-->
 
