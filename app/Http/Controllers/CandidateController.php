@@ -116,4 +116,7 @@ class CandidateController extends Controller
         return Redirect::back();
     }
 
+    public function showAll(){
+
+    }
 }
