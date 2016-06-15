@@ -80,13 +80,7 @@ class VoterController extends Controller
             'email' => $input['email'],
             'password' => bcrypt($input['password']),
         ]);
-        $data = array( 'email' => $user->email,'name'=>$user->name);
 
-
-        Mail::send('auth.emails.test', $data, function ($m) use($data) {
-            $m->from('anuradha@ielect.com', 'iElect-online elections');
-            $m->to($data['email'], $data['name'])->subject('Welcome to iElect online voting system');
-        });
 
         $voter = Voter::create([
             'candidate_id' => "1",

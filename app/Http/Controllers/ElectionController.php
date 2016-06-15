@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use App\Election;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Khill\Lavacharts\Lavacharts;
 use Request;
 use Carbon\Carbon;
+use Mail;
 
 use Helfull\CanvasJS\Chart;
 use Helfull\CanvasJS\Chart\ChartData;
@@ -24,7 +26,7 @@ class ElectionController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('finalize',['only'=>['edit','finalize']]);
+        $this->middleware('finalize',['only'=>['edit','finalize','results']]);
         $this->middleware('admin_privilage',['except'=>'vote']);
     }
 
@@ -190,6 +192,8 @@ class ElectionController extends Controller
     {
         $errors = false;
         $election = Election::findOrFail($id);
+        //dont put $election->voters() it wont work
+        $voters=$election->voters;
         $voter_count = $election->voters()->count();
         $candidate_count = $election->candidates()->count();
         if ($voter_count == 0) {
@@ -232,7 +236,18 @@ class ElectionController extends Controller
         }
 
         if (!$errors) {
-            flash()->info('Your Election is Successfully Finalized.Send Emails to Voters using email Blast');
+
+            foreach($voters as $voter){
+                $user=User::find($voter->user_id);
+                $data = array( 'email' => $user->email,'name'=>$voter->name);
+
+
+                Mail::send('auth.emails.test', $data, function ($m) use($data) {
+                    $m->from('anuradha@ielect.com', 'iElect-online elections');
+                    $m->to($data['email'], $data['name'])->subject('Welcome to iElect online voting system');
+                });
+            }
+            flash()->info('Your Election is Successfully Finalized.Sent Emails to Voters using email Blast');
             $election['finalize']=true;
             $election->save();
         }

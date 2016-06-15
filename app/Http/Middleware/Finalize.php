@@ -43,6 +43,11 @@ class Finalize
            return redirect('/voterhome');
 
        }
+       else if(!$election->finalize && $request->fullUrlIs('http://localhost/ielect/public/elections/'.$election_id.'/results')){
+           flash()->error("Cannot see results.This Election is not  finalized yet");
+           return redirect('elections/'.$election_id.'/show');
+
+       }
         return $next($request);
 
     }

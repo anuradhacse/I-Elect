@@ -70,4 +70,13 @@ class ExampleTest extends TestCase
             ->seePageIs('register');
     }
 
+    public function testAdminHome(){
+        $this->withoutMiddleware();
+        $this->visit('/adminhome')
+            ->see('your current elections');
+    }
+
+
+
+
 }
