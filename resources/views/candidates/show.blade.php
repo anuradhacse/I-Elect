@@ -23,12 +23,12 @@
                 <div class="">
                     <h1>Candidate Details</h1>
                     <hr>
-                    Name of Candidate:{{$candidate->name}}<hr>
-                    Details Of Candidate{{$candidate->description}}<hr>
+                    Name of Candidate:<b style="color:#31b0d5; font-size: 18px"><i>{{$candidate->name}}</i></b><hr>
+                    Details Of Candidate:<b style="color:#31b0d5; font-size: 18px"><i>{{$candidate->description}}</i></b><hr>
                     Profile Picture:
 
                     @if( $candidate['image_path'] != "")
-                        <img src='{{asset("uploads/".$candidate['image_path'])}}' width="100px" height="100px">
+                        <img src='{{asset("uploads/".$candidate['image_path'])}}' width="400px" height="400px">
                         @else
                         No image
                         @endif
